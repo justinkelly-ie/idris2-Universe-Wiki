@@ -1,6 +1,6 @@
 # Double Slit Interference Phenomenon
 
-In standard quantum mechanics, the double-slit experiment is often explained by invoking wave-particle duality. In the deterministic Primorial architecture, we eliminate this continuity. A particle does not become a wave; it remains a discrete point with a fractional input spread.
+In this model, rather than representing wave-particle duality through continuous wave functions, we model it as the **emergent arithmetic projection of discrete Spread Polynomials**. A particle remains a discrete coordinate on the pixel grid, but its spatial dispersion is governed by a fractional input spread that naturally projects into the observed interference-like pattern upon grid resolution.
 
 The "interference pattern" observed on the detector screen is purely an arithmetic projection of Spread Polynomials.
 

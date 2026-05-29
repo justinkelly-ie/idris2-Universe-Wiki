@@ -1,6 +1,6 @@
 # The Weak Force (n=11 Denominator Overflow)
 
-In Linear Physics, the Weak Force is not mediated by abstract gauge bosons. Instead, it is an emergent **arithmetic boundary condition** enforced directly by the integer grid limit and polynomial spread capacity.
+In this model, rather than representing the Weak Force as an independent interaction mediated by fundamental gauge bosons, we model it as an emergent **arithmetic boundary condition** enforced directly by the integer grid limit and polynomial spread capacity. The observed $W$ and $Z$ bosons are derived as the transient geometric transitions of the topology before it stabilizes into its decay products.
 
 ## The Dark Energy Pool (128)
 

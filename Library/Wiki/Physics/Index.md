@@ -24,9 +24,9 @@ The same multiset algebra that derives the Periodic Table extends into life scie
 - **Cortical Folding** — Extreme cortical gyri folding modelled at macro scale by `S₁₃₇`. Dense neuronal substrate generates high-frequency structural locks, maximising computational capacity.
 - **Phylogeny** — `Physics.Scales.Phylogeny` models biological scale transitions as extensions of the ice geometry fold at N+2.
 
-See also in the Maths wiki: 
-- **[Mathematical Type Architecture](../Maths/Types.md)**
-- **[The Simplicial Architecture of the Universe](../Maths/Simplicial_Architecture.md)**
+See also in the Simplex wiki: 
+- **[Mathematical Type Architecture](../Simplex/Types.md)**
+- **[The Simplicial Architecture of the Universe](../Simplex/Simplicial_Architecture.md)**
 
 ## Key Discoveries
 
