@@ -14,6 +14,7 @@ import Evolution.Clock
 import Scale.PythagoreanFixedPoint
 import Scale.ScaleTrajectory
 import Scale.IceGeometry
+import Scale.NaturalFolding
 import Math.Multiset
 import Math.IntPolynumber
 import Math.SpreadPolynumber
@@ -129,6 +130,37 @@ prop_firstDecoherenceIsK16 : Bool
 prop_firstDecoherenceIsK16 = firstDecoherenceIsK16
 ```
 
+## Biological Folding
+
+### Property 12: Alpha Helix Stable Folds
+In standard biochemistry, an Alpha Helix twists every ~3.6 amino acid residues.
+A chain of 36 amino acids driven by $S_{10}$ creates exactly 3 stable twists.
+
+```idris
+public export
+prop_alphaHelixStableFolds : Bool
+prop_alphaHelixStableFolds = alphaHelixModel.stableFolds == 3
+```
+
+### Property 13: DNA Double Helix Stable Folds
+A standard DNA turn contains ~10.4 base pairs.
+A 104 base-pair sequence driven by $S_{10}$ creates exactly 10 stable turns.
+
+```idris
+public export
+prop_dnaHelixStableFolds : Bool
+prop_dnaHelixStableFolds = dnaHelixModel.stableFolds == 10
+```
+
+### Property 14: Cortical Gyri Folds
+The cerebral cortex folding (S_137 at the Observer scale) with 10,000 units yields exactly 72 turns.
+
+```idris
+public export
+prop_corticalStableFolds : Bool
+prop_corticalStableFolds = corticalFoldModel.stableFolds == 72
+```
+
 ## Main Test Runner
 
 ```idris
@@ -154,4 +186,7 @@ main = do
   putStrLn $ "prop_fingerprintInvariant: " ++ r9.msg
   runProp "prop_eddingtonIsMatterTimesResonance" prop_eddingtonIsMatterTimesResonance
   runProp "prop_firstDecoherenceIsK16" prop_firstDecoherenceIsK16
+  runProp "prop_alphaHelixStableFolds" prop_alphaHelixStableFolds
+  runProp "prop_dnaHelixStableFolds" prop_dnaHelixStableFolds
+  runProp "prop_corticalStableFolds" prop_corticalStableFolds
 ```

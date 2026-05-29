@@ -19,5 +19,7 @@ This matrix tracks the automated testing suite for the core Cosmology, Chromogeo
 | Water Archimedes Signature | Dynamically verifies that the fundamental H₂O bond geometry perfectly balances Red and Blue quadrances, yielding an invariant structural anchor. | ✅ PASS | OK, passed 100 tests . |
 | Methane Causal Stability | Proves that Methane's Red Quadrance signature precisely sums to a Null Vector, confirming perfectly balanced dynamic oscillation across its 4 bonds. | ✅ PASS | OK, passed 100 tests . |
 | Carbon Valence Identity | Ensures Carbon's algebraic valence mathematically equals the BondGate degree (4), formalizing why it acts as the universal organic backbone. | ✅ PASS | OK, passed 100 tests . |
+| Iron Structural Lag | Verifies the total structural Leibniz lag of Iron matches its nucleosynthesis peak state of 52 lag units. | ✅ PASS | OK, passed 100 tests . |
+| Feynmanium Structural Lag | Verifies the maximum stable element Feynmanium possesses exactly 274 total lag units at the grid boundary. | ✅ PASS | OK, passed 100 tests . |
 | Ascension Mass Conservation | Verifies that when a state condenses into a single macro-node during topological ascension, its total mass (Leibniz Lag) is perfectly conserved. | ✅ PASS | OK, passed 100 tests . |
 | Empty Vacuum Anchor | Ensures an empty universe cannot spontaneously ascend scales. | ✅ PASS | OK, passed 100 tests . |

@@ -3,7 +3,7 @@
 This document aggregates all formal mathematical physics theorems proven entirely at compile-time by the Idris 2 typechecker. These are absolute structural guarantees, requiring no runtime execution.
 
 ### Hydrogen
-**Module**: `Physics.System.PeriodicTable`
+**Module**: `System.PeriodicTable`
 
 ```idris
 Hydrogen : Element
@@ -12,7 +12,7 @@ Hydrogen : Element
 ---
 
 ### Carbon
-**Module**: `Physics.System.PeriodicTable`
+**Module**: `System.PeriodicTable`
 
 ```idris
 Carbon : Element
@@ -21,7 +21,7 @@ Carbon : Element
 ---
 
 ### Oxygen
-**Module**: `Physics.System.PeriodicTable`
+**Module**: `System.PeriodicTable`
 
 Oxygen (Z=8): the universal mediator.
 
@@ -42,7 +42,7 @@ Oxygen : Element
 ---
 
 ### Iron
-**Module**: `Physics.System.PeriodicTable`
+**Module**: `System.PeriodicTable`
 
 Iron (Z=26): the stellar fusion limit.
 Heaviest element producible by core fusion before gravitational collapse.
@@ -54,7 +54,7 @@ Iron : Element
 ---
 
 ### Feynmanium
-**Module**: `Physics.System.PeriodicTable`
+**Module**: `System.PeriodicTable`
 
 The absolute maximum stable element on the grid.
 Z=137 survives the resonance gate. Z=138 does not.
@@ -66,7 +66,7 @@ Feynmanium : Element
 ---
 
 ### oxygenDividesLatent
-**Module**: `Physics.System.PeriodicTable`
+**Module**: `System.PeriodicTable`
 
 Oxygen divides the dark energy pool (128 = 2^7) exactly.
 128 / 8 = 16 quanta.
@@ -78,7 +78,7 @@ oxygenDividesLatent : (div 128 8 = 16)
 ---
 
 ### oxygenVisibleResidue
-**Module**: `Physics.System.PeriodicTable`
+**Module**: `System.PeriodicTable`
 
 Oxygen's remainder in visible matter (27 = 3^3) is exactly
 the MatterGate degree (n=3).
@@ -90,7 +90,7 @@ oxygenVisibleResidue : (Prelude.mod 27 8 = 3)
 ---
 
 ### oxygenNotPrimorial
-**Module**: `Physics.System.PeriodicTable`
+**Module**: `System.PeriodicTable`
 
 Oxygen does NOT divide the primorial manifold (210).
 This is why it acts as a mediator rather than a structural primitive.
@@ -102,7 +102,7 @@ oxygenNotPrimorial : (Prelude.mod 210 8 = 2)
 ---
 
 ### carbonIsBackgroundTimesMatter
-**Module**: `Physics.Elements.Carbon`
+**Module**: `Compound.Carbon`
 
 Formal Proof that Carbon's atomic number (6) is exactly
 BackgroundGate × MatterGate.
@@ -114,30 +114,30 @@ carbonIsBackgroundTimesMatter : (6 = degree BackgroundGate * degree MatterGate)
 ---
 
 ### carbonValenceIsBondGate
-**Module**: `Physics.Elements.Carbon`
+**Module**: `Compound.Carbon`
 
 Formal Proof that Carbon's valence (4) exactly matches the BondGate.
 
 ```idris
-carbonValenceIsBondGate : (Physics.Elements.Carbon.carbonValence = degree BondGate)
+carbonValenceIsBondGate : (Compound.Carbon.carbonValence = degree BondGate)
 ```
 
 ---
 
 ### methaneTimeOscillation
-**Module**: `Physics.Elements.Methane`
+**Module**: `Compound.Methane`
 
 Formal Proof that the Red Quadrance signature of Methane forms
 a perfect TimeGate oscillation (+7, -7, +7, -7).
 
 ```idris
-methaneTimeOscillation : (Physics.Elements.Methane.redSignatureH1 = 7, Physics.Elements.Methane.redSignatureH2 = -7, Physics.Elements.Methane.redSignatureH3 = 7, Physics.Elements.Methane.redSignatureH4 = -7)
+methaneTimeOscillation : (Compound.Methane.redSignatureH1 = 7, Compound.Methane.redSignatureH2 = -7, Compound.Methane.redSignatureH3 = 7, Compound.Methane.redSignatureH4 = -7)
 ```
 
 ---
 
 ### methaneNullVector
-**Module**: `Physics.Elements.Methane`
+**Module**: `Compound.Methane`
 
 Formal Proof that Methane forms a pure Null Vector in Minkowski space.
 The total TimeGate oscillation sums to exactly 0 (7 - 7 + 7 - 7 = 0).
@@ -145,46 +145,46 @@ This means the Carbon Backbone is causally stable (a persistent identity),
 exactly like the (7,7) hydrogen bond in IceGeometry!
 
 ```idris
-methaneNullVector : (Physics.Elements.Methane.redSignatureH1 + Physics.Elements.Methane.redSignatureH2 + Physics.Elements.Methane.redSignatureH3 + Physics.Elements.Methane.redSignatureH4 = 0)
+methaneNullVector : (Compound.Methane.redSignatureH1 + Compound.Methane.redSignatureH2 + Compound.Methane.redSignatureH3 + Compound.Methane.redSignatureH4 = 0)
 ```
 
 ---
 
 ### methaneOrthogonal
-**Module**: `Physics.Elements.Methane`
+**Module**: `Compound.Methane`
 
 Formal Proof that the Methane bonds are perfectly orthogonal
 in the Blue (Euclidean) Metric.
 
 ```idris
-methaneOrthogonal : isPerpendicularNL Blue Physics.Elements.Methane.ch4_h1 Physics.Elements.Methane.ch4_h2 = True
+methaneOrthogonal : isPerpendicularNL Blue Compound.Methane.ch4_h1 Compound.Methane.ch4_h2 = True
 ```
 
 ---
 
 ### methaneChargeConservation
-**Module**: `Physics.Elements.Methane`
+**Module**: `Compound.Methane`
 
 Formal Proof that all Methane bonds conserve exactly the same
 Blue Quadrance (25 = ChargeGate²) as the Water molecule.
 
 ```idris
-methaneChargeConservation : (Physics.Elements.Methane.methaneBondQuadrance = 25)
+methaneChargeConservation : (Compound.Methane.methaneBondQuadrance = 25)
 ```
 
 ---
 
 ### methaneBaryonicLagIs10
-**Module**: `Physics.Elements.Methane`
+**Module**: `Compound.Methane`
 
 ```idris
-methaneBaryonicLagIs10 : (Physics.Elements.Methane.methaneBaryonicLag = 10)
+methaneBaryonicLagIs10 : (Compound.Methane.methaneBaryonicLag = 10)
 ```
 
 ---
 
 ### methaneMassEnergyEquivalence
-**Module**: `Physics.Elements.Methane`
+**Module**: `Compound.Methane`
 
 Formal Proof of Discrete E=mc² (Mass-Energy Equivalence).
 The total Baryonic Mass (Z) of Methane is 10.
@@ -195,8 +195,7 @@ Water does NOT have this property (50 ≠ 10²), making Methane the first
 squares the mass.
 
 ```idris
-methaneMassEnergyEquivalence : (Physics.Elements.Methane.methaneBondQuadrance * 4 = Physics.Elements.Methane.methaneBaryonicLag * Physics.Elements.Methane.methaneBaryonicLag)
+methaneMassEnergyEquivalence : (Compound.Methane.methaneBondQuadrance * 4 = Compound.Methane.methaneBaryonicLag * Compound.Methane.methaneBaryonicLag)
 ```
 
 ---
-

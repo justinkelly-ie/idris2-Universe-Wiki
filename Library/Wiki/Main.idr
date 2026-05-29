@@ -21,6 +21,8 @@ import Maths.LinearBridgeProperties
 import Simplex.Core
 import Evolution.Cycle
 import Math.SpreadPolynumber
+import Compound.Water
+import Compound.Methane
 
 import System.File
 import Data.String
@@ -80,6 +82,84 @@ exportSimulationJSON = do
     | Left err => putStrLn "Failed to write state_vectors.json to visualizer/public/"
   putStrLn "Successfully exported 10 simulation ticks to visualizer/public/state_vectors.json!"
 
+exportModelJSONs : IO ()
+exportModelJSONs = do
+  putStrLn "Exporting individual models for 3D visualizer..."
+  
+  -- 1. Water Model
+  let waterState = fromList [
+        ((oPosition, spreadPoly 1), 8),
+        ((oPosition, spreadPoly 3), 8),
+        ((h1Position, spreadPoly 1), 1),
+        ((h1Position, spreadPoly 3), 1),
+        ((h1Position, spreadPoly 4), 1),
+        ((h2Position, spreadPoly 1), 1),
+        ((h2Position, spreadPoly 3), 1),
+        ((h2Position, spreadPoly 4), 1)
+      ]
+  let waterSubstrate = fromList [
+        ((oPosition, h1Position), 1),
+        ((oPosition, h2Position), 1)
+      ]
+  let waterUniverse = MkUniverseState waterSubstrate waterState
+  let waterJson = serializeSimulation [waterUniverse]
+  Right () <- writeFile "/var/home/justin/Projects/Nat-Science/visualizer/public/water.json" waterJson
+    | Left err => putStrLn "Failed to write water.json to visualizer/public/"
+  putStrLn "  Successfully exported water.json!"
+
+  -- 2. Methane Model
+  let methaneState = fromList [
+        ((cPosition, spreadPoly 1), 6),
+        ((cPosition, spreadPoly 3), 6),
+        ((ch4_h1, spreadPoly 1), 1),
+        ((ch4_h1, spreadPoly 3), 1),
+        ((ch4_h1, spreadPoly 4), 1),
+        ((ch4_h2, spreadPoly 1), 1),
+        ((ch4_h2, spreadPoly 3), 1),
+        ((ch4_h2, spreadPoly 4), 1),
+        ((ch4_h3, spreadPoly 1), 1),
+        ((ch4_h3, spreadPoly 3), 1),
+        ((ch4_h3, spreadPoly 4), 1),
+        ((ch4_h4, spreadPoly 1), 1),
+        ((ch4_h4, spreadPoly 3), 1),
+        ((ch4_h4, spreadPoly 4), 1)
+      ]
+  let methaneSubstrate = fromList [
+        ((cPosition, ch4_h1), 1),
+        ((cPosition, ch4_h2), 1),
+        ((cPosition, ch4_h3), 1),
+        ((cPosition, ch4_h4), 1)
+      ]
+  let methaneUniverse = MkUniverseState methaneSubstrate methaneState
+  let methaneJson = serializeSimulation [methaneUniverse]
+  Right () <- writeFile "/var/home/justin/Projects/Nat-Science/visualizer/public/methane.json" methaneJson
+    | Left err => putStrLn "Failed to write methane.json to visualizer/public/"
+  putStrLn "  Successfully exported methane.json!"
+
+  -- 3. Iron Model
+  let ironPos = MkPixel 0 0
+  let ironState = fromList [
+        ((ironPos, spreadPoly 1), 26),
+        ((ironPos, spreadPoly 3), 26)
+      ]
+  let ironUniverse = MkUniverseState (fromList []) ironState
+  let ironJson = serializeSimulation [ironUniverse]
+  Right () <- writeFile "/var/home/justin/Projects/Nat-Science/visualizer/public/iron.json" ironJson
+    | Left err => putStrLn "Failed to write iron.json to visualizer/public/"
+  putStrLn "  Successfully exported iron.json!"
+
+  -- 4. Feynmanium Model
+  let fyPos = MkPixel 0 0
+  let fyState = fromList [
+        ((fyPos, spreadPoly 1), 137),
+        ((fyPos, spreadPoly 3), 137)
+      ]
+  let fyUniverse = MkUniverseState (fromList []) fyState
+  let fyJson = serializeSimulation [fyUniverse]
+  Right () <- writeFile "/var/home/justin/Projects/Nat-Science/visualizer/public/feynmanium.json" fyJson
+    | Left err => putStrLn "Failed to write feynmanium.json to visualizer/public/"
+  putStrLn "  Successfully exported feynmanium.json!"
+
 main : IO ()
 main = do
   putStrLn "Starting UniverseState QuickCheck Suite...\n"
@@ -107,6 +187,12 @@ main = do
 
   putStrLn "Running Test 9: Carbon Valence Identity"
   let res9 = quickCheck prop_carbonValence
+
+  putStrLn "Running Test 9.1: Iron Structural Lag"
+  let resIron = quickCheck prop_ironLag
+
+  putStrLn "Running Test 9.2: Feynmanium Structural Lag"
+  let resFeynmanium = quickCheck prop_feynmaniumLag
 
   putStrLn "Running Test 10: Evolution Mass Conservation on Ascension"
   let res10 = quickCheck prop_ascensionConservesMass
@@ -138,6 +224,8 @@ main = do
         ("Water Archimedes Signature", "Dynamically verifies that the fundamental H₂O bond geometry perfectly balances Red and Blue quadrances, yielding an invariant structural anchor.", res7),
         ("Methane Causal Stability", "Proves that Methane's Red Quadrance signature precisely sums to a Null Vector, confirming perfectly balanced dynamic oscillation across its 4 bonds.", res8),
         ("Carbon Valence Identity", "Ensures Carbon's algebraic valence mathematically equals the BondGate degree (4), formalizing why it acts as the universal organic backbone.", res9),
+        ("Iron Structural Lag", "Verifies the total structural Leibniz lag of Iron matches its nucleosynthesis peak state of 52 lag units.", resIron),
+        ("Feynmanium Structural Lag", "Verifies the maximum stable element Feynmanium possesses exactly 274 total lag units at the grid boundary.", resFeynmanium),
         ("Ascension Mass Conservation", "Verifies that when a state condenses into a single macro-node during topological ascension, its total mass (Leibniz Lag) is perfectly conserved.", res10),
         ("Empty Vacuum Anchor", "Ensures an empty universe cannot spontaneously ascend scales.", res11)
       ]
@@ -212,3 +300,4 @@ main = do
 
   putStrLn "\n--- State Serialization Bridge ---"
   exportSimulationJSON
+  exportModelJSONs
