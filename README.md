@@ -49,12 +49,12 @@ graph TD
 
 Click on the links below to explore the theoretical chapters and their live, compile-time property proofs directly on GitHub:
 
-### 📖 [Physics & Cosmology Core](Library/Wiki/Physics/Index.md)
-*   ⚛️ **[Primorial Particle Mapping](Library/Wiki/Physics/Particles.md)** — How standard model particles and molecular bonds emerge from prime spread gates.
-*   🔄 **[Recursive Multiset Composition](Library/Wiki/Physics/Recursive_Composition.md)** — Time, scale transitions, and the 137-scale trajectory as recursive polynomial composition.
-*   📐 **[Three-Metric Chromogeometry](Library/Wiki/Physics/Theorems.md)** — Wildberger's RGB rational coordinates (Euclidean Blue, Minkowski Red, Product Green) without decimal drift.
-*   ⏳ **[Causal Evolution & Leibniz Lag](Library/Wiki/Physics/UniverseState.md)** — The strict monotonic topology of `UniverseState` and the empty vacuum anchor.
-*   🧪 **[Elements & H₂O Bond Chemistry](Library/Wiki/Physics/Elements.md)** — Explaining why Water coordinate `(4,3)` is a Pythagorean Fixed Point.
+### 📖 [Physics & Cosmology Core](Library/Wiki/Verification_Matrix.md)
+*   ⚛️ **[Primorial Particle Mapping](Library/Wiki/Symmetry/Particles.md)** — How standard model particles and molecular bonds emerge from prime spread gates.
+*   🔄 **[Recursive Multiset Composition](Library/Wiki/Scale/Recursive_Composition.md)** — Time, scale transitions, and the 137-scale trajectory as recursive polynomial composition.
+*   📐 **[Three-Metric Chromogeometry](Library/Wiki/Derivation/Theorems.md)** — Wildberger's RGB rational coordinates (Euclidean Blue, Minkowski Red, Product Green) without decimal drift.
+*   ⏳ **[Causal Evolution & Leibniz Lag](Library/Wiki/Derivation/UniverseState.md)** — The strict monotonic topology of `UniverseState` and the empty vacuum anchor.
+*   🧪 **[Elements & H₂O Bond Chemistry](Library/Wiki/Compound/Elements.md)** — Explaining why Water coordinate `(4,3)` is a Pythagorean Fixed Point.
 
 ### 💻 [Code & Mathematical Engine](Library/Wiki/Code/Index.md)
 *   🧮 **[Sigma-Linear Execution Engine](Library/Wiki/Code/architecture.md)** — The $O(N)$ dependent multiset bridge that maps unrestricted runtime calculations into the type signature.
@@ -84,7 +84,7 @@ pack build idris2-Universe-Wiki.ipkg
 ```
 
 This will run all 55+ QuickCheck properties and automatically write the results to:
-*   [Physics Verification Matrix](Library/Wiki/Physics/Verification_Matrix.md)
+*   [Physics Verification Matrix](Library/Wiki/Verification_Matrix.md)
 *   [Code Verification Matrix](Library/Wiki/Code/Verification_Matrix.md)
 
 ---
