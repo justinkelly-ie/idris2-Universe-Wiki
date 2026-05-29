@@ -81,3 +81,19 @@ Water's bond triangle at $(4,3) \leftrightarrow (3,4)$ with Oxygen at origin is 
 The electron at position (4,3) has the same spread as the bond. At this coordinate, the distinction between **particle** and **interaction** dissolves.
 
 See `Physics.Elements.Water` and `Physics.Scales.PythagoreanFixedPoint` for the full derivation.
+
+---
+
+## Visualizer Interactive Scenarios
+
+You can verify and view the scenarios described above in real-time using the **Nat-Science Laboratory** interactive playground. Click the links below to instantly configure the visualizer with the exact parameters for each physical state:
+
+*   **[Scenario 1: Pure Delocalized Minkowski Radiation](http://localhost:5173/?mode=omega&tension=0.8)**
+    *   **Parameters**: `mode=omega` (Baryon Lock Mode), `tension=0.8` (High metrical tension).
+    *   **Physical Effect**: The $128$-bit vacuum limit is exceeded. Spacetime bends under the high energy density (forming a pronounced Einstein-Rosen metric gravity well). You will see delocalized photon waves oscillating purely along the null-quadrance Minkowski diagonals ($y = \pm x$).
+*   **[Scenario 2: The Baryogenesis Snap (Baryon Lock)](http://localhost:5173/?mode=omega&tension=0.0)**
+    *   **Parameters**: `mode=omega` (Baryon Lock Mode), `tension=0.0` (Zero metrical tension).
+    *   **Physical Effect**: The ChargeGate spread value $S_5(s)$ snaps to exactly $1$ (natural number $\in \mathbb{N}$). The spacetime curvature flattens completely to an Euclidean flat plane, and the delocalized radiation waves collapse, locking the quarks into a stable, localized massive 3D Baryon.
+*   **[Scenario 3: SigmaGate Molecular Bond Model](http://localhost:5173/?mode=sigmagate&edgeA=1&edgeB=1&edgeC=2)**
+    *   **Parameters**: `mode=sigmagate` (SigmaGate Modeler), `edgeA=1` ($0,0 \to 4,3$), `edgeB=1` ($0,0 \to 3,4$), `edgeC=2` ($4,3 \to 3,4$).
+    *   **Physical Effect**: Sets up a molecular bond configuration. Summing the boundary charges dynamically demonstrates absolute algebraic conservation: $q_{ROOT} + q_A + q_B = -2 + (-1) + 3 = 0$.
