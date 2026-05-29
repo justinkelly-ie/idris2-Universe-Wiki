@@ -2,26 +2,41 @@
 
 This document records the exact geometric and algebraic mappings of standard model particles to the Primorial Architecture and Chromogeometry (as modeled in the `idris2-LUniverse` repository).
 
-Unlike standard quantum mechanics which relies on continuous wave functions, fields, and phenomenological parameters (mass, charge), particles in this framework are defined strictly as topological and algebraic constraints upon the 137-Grid.
+---
+
+## Key Concepts: A Primer
+
+Before exploring the particle mappings, it is helpful to define the core terms of this model in plain language:
+
+*   **The 137-Grid**: Space in this model is not an infinite, continuous smooth field. It is a discrete, pixel-like grid of integer coordinates. Causal evolution moves outward across exactly 137 nested scales of resolution. The number 137 represents the "grid wall"—the absolute mathematical boundary beyond which stable arithmetic factors break down and coordinates decohere (which maps directly to the Feynman limit in standard physics).
+*   **The Primorial Architecture**: Instead of continuous fields, the coordinate grid is structurally bounded by the 4th primorial product ($2 \times 3 \times 5 \times 7 = 210$ total base states). Standard model particles are not distinct "objects"; they are identical base data structures filtered through specific prime-number polynomial "gates" ($n=2, 3, 5, 7, 11, 13$) that govern how they behave on the grid.
+*   **Spread Polynomial Lock**: A condition where a particle's spatial coordinates perfectly satisfy a polynomial equation, yielding a clean whole number (natural number) that projects a stable, observable state. If the calculation leaves a fractional residue, the state is physically "unresolvable" in isolation (which explains quark confinement).
+*   **Leibniz Lag**: A functional measure of causal density—how much causal history and relational delay is concentrated at a coordinate. This acts as the discrete mathematical equivalent of "mass" or "inertia".
+
+---
 
 ## The Particle Zoo
 
 | Particle | Standard Physics Description | Primorial Architecture / Algebraic Mapping |
 | :--- | :--- | :--- |
 | **Neutrino** | Elusive, nearly massless particle that rarely interacts. | **$n=1$ Absolute Vacuum Lock**. Mirrors the fractional input spread without fractional change. It acts as an invisible vacuum configuration passing smoothly through the dark substrate. |
-| **Photon** | Light quanta; travels at $c$, zero rest mass, mediates EM force. | **Red Metric Null-Quadrance Operator**. A 2D path where $x^2 - y^2 = 0$. Purely spatial energy ($Q_b > 0$) with zero projective time passage ($Q_r = 0$). |
-| **Electron / Lepton** | Stable fundamental point particle with distinct mass. | **$n=3$ Matter Gate Topological Knot**. A strictly non-fractional knot anchored in the visible blue geometric space. It needs no color confinement because it fundamentally satisfies grid stability on its own. |
+| **Photon** | Light quanta; travels at $c$, zero rest mass, mediates EM force. | **Red Metric Null-Quadrance Operator**. A 2D path where $x^2 - y^2 = 0$ (null Minkowski distance). Purely spatial energy ($Q_b > 0$) with zero projective time passage ($Q_r = 0$). |
+| **Electron / Lepton** | Stable fundamental point particle with distinct mass. | **$n=3$ Matter Gate Topological Knot**. A strictly non-fractional coordinate anchored in the visible blue geometric space. It needs no color confinement because it fundamentally satisfies grid stability on its own. |
 | **Molecular Bond** | Glue binding chemical/molecular structures (e.g. electron sharing). | **$n=4$ Composite Gate**. A "double-squeezed" gate ($2^2$) allowing multiple matter states to share the identical natural-number coordinate simultaneously, perfectly skirting Pauli Exclusion via arithmetic overlap. |
 | **Quark** | Fractionally charged particle; exhibits asymptotic freedom. | **$n=5$ Charge Gate**. An inherently unbalanced fractional geometric state. Solitary quarks structurally fail the $A(Q) = T(s)$ lock, forbidding them from existing independently on the grid. |
-| **Baryon** | Colorless hadron composed of three quarks (e.g., Proton). | **$n=5$ Triad Configuration**. Three fractional quarks whose overlapping geometric configuration perfectly balances the Archimedes spatial area against the Triple Spread tension ($A(Q_1,Q_2,Q_3) = T(s_1,s_2,s_3)$). |
+| **Baryon** | Colorless hadron composed of three quarks (e.g., Proton). | **$n=5$ Triad Configuration**. Three fractional quarks whose overlapping geometric configuration perfectly balances the spatial area against the relational tension ($A(Q_1,Q_2,Q_3) = T(s_1,s_2,s_3)$), resolving the fractions. |
 | **Meson** | Unstable hadron composed of a quark and anti-quark. | **$n=5$ Dyad Configuration**. Opposing fractional topologies binding to balance parallel field tension. |
 | **Weak Boson (W/Z)** | Massive particle mediating the weak nuclear force and beta decay. | **$n=11$ Weak Force Gate Overflow**. Reaching this prime gate forces spread polynomial coefficients to exceed the 128-state Dark Energy boundary. The arithmetic shatters, cleanly decomposing the state into $11 \to 5 \text{ (Quark)} + 4 \text{ (Bond)} + 2 \text{ (Lepton)}$. |
 
+---
+
 ## Key Insights
 
-1. **Mass and Stability are Arithmetic Thresholds**: Particles do not possess "mass" in the traditional sense; mass is a measure of geometric localization ($n \in \mathbb{N}$) on the Blue Euclidean metric. If the arithmetic clears, it materializes. If it doesn't, it is either confined or bleeds into Dark Energy.
-2. **Physics is Compiler-Enforced**: We have successfully tested this mapping using dependent types (Quantitative Type Theory). The behavior of these particles—such as Baryon confinement, Photon absorption resulting in purely spatial impulses, and Weak Boson decomposition—is enforced mathematically by the Idris 2 type-checker and rigorously verified by QuickCheck property testing (51 tests, zero failures).
+1. **Mass and Stability are Arithmetic Thresholds**: In this model, mass is not represented as an independent, hardcoded input constant. Instead, it is an **emergent property of causal density (Leibniz Lag)** concentrated at a coordinate, while stability is governed by **geometric localization** (whether the coordinates in the Blue Euclidean metric resolve to clean whole numbers). If the equations resolve to whole integers, the state projects as a stable particle; if they leave fractional residues, the coordinate is physically unresolvable in isolation, forcing the state to either remain confined in a triad configuration (like quarks) or disperse into the background substrate (Dark Energy).
+2. **Physics is Compiler-Enforced**: We have successfully tested this mapping using dependent types (Quantitative Type Theory). The behavior of these particles—such as Baryon confinement, Photon absorption resulting in purely spatial impulses, and Weak Boson decomposition—is enforced mathematically by the Idris 2 type-checker and rigorously verified by QuickCheck property testing (55+ tests, zero failures).
 3. **Continuous Properties are Illusions**: Interactions are simply matrix transformations (e.g., the Cross-Ratio matrix transforming null-quadrance photons into pure integer impulses upon absorption). No infinite waves, no $c$ constants—just integer mathematics.
+
+---
 
 ## Standard Physics vs. Primorial Architecture
 
@@ -53,7 +68,7 @@ The gate pipeline doesn't stop at subatomic particles. It derives chemistry:
 
 Oxygen is $2^3$ (BackgroundGate cubed). It perfectly divides the dark energy pool ($128 / 8 = 16$), and its residue in visible matter IS the MatterGate ($27 \bmod 8 = 3$). This is why Oxygen is the universal electron acceptor driving metabolism. Its valence of 2 (= BackgroundGate degree) means it accepts exactly 2 electrons.
 
-### Water (H₂O) — The Pythagorean Fixed Point
+### Water (H₂O) — The Molecular Bridge
 
 Water's bond triangle at $(4,3) \leftrightarrow (3,4)$ with Oxygen at origin is the **unique** coordinate where the chromogeometric quadrances decode back to gate degrees:
 
