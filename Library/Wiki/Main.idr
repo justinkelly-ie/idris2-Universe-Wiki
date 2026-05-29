@@ -59,9 +59,20 @@ serializeSimulation states =
 exportSimulationJSON : IO ()
 exportSimulationJSON = do
   putStrLn "Generating state vectors for 3D visualizer..."
+  let origin = MkPixel 0 0
+  let basisX = MkPixel 4 3
+  let basisY = MkPixel 3 4
+  let initSubstrate = fromList [ ((origin, basisX), 1)
+                               , ((origin, basisY), 1)
+                               , ((basisX, basisY), 2)
+                               , ((basisY, origin), 1)
+                               ]
   let seedPoly = spreadPoly 5
-  let seedState = fromList [((MkPixel 4 3, seedPoly), 1), ((MkPixel 3 4, seedPoly), 1)]
-  let initialUniverse = MkUniverseState emptySubstrate seedState
+  let seedState = fromList [ ((origin, seedPoly), 2)
+                           , ((basisX, seedPoly), 1)
+                           , ((basisY, seedPoly), 3)
+                           ]
+  let initialUniverse = MkUniverseState initSubstrate seedState
   let steps = runSimulationSteps initialUniverse 10
   let jsonStr = serializeSimulation steps
   let dest = "/var/home/justin/Projects/Nat-Science/visualizer/public/state_vectors.json"
