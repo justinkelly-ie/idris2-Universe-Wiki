@@ -18,6 +18,9 @@ import Evolution.Adaptive_Cycle_Findings
 import Evolution.Adaptive_Cycle_Chemistry
 import Evolution.Adaptive_Cycle_Scales
 import Maths.LinearBridgeProperties
+import Simplex.Core
+import Evolution.Cycle
+import Math.SpreadPolynumber
 
 import System.File
 import Data.String
@@ -37,6 +40,34 @@ markdownTable results =
                         Just True => "✅ PASS"
                         Just False => "❌ FAIL"
       in "| " ++ name ++ " | " ++ desc ++ " | " ++ statusStr ++ " | " ++ trim (msg res) ++ " |\n"
+
+runSimulationSteps : UniverseState -> Nat -> List UniverseState
+runSimulationSteps state Z = [state]
+runSimulationSteps state (S k) =
+  let nextState = runAdaptiveCycle 137 Blue (MkPixel 4 3) state
+  in state :: runSimulationSteps nextState k
+
+serializeSimulation : List UniverseState -> String
+serializeSimulation states =
+  "[" ++ join "," (map serializeUniverseState states) ++ "]"
+  where
+    join : String -> List String -> String
+    join sep [] = ""
+    join sep [x] = x
+    join sep (x :: xs) = x ++ sep ++ join sep xs
+
+exportSimulationJSON : IO ()
+exportSimulationJSON = do
+  putStrLn "Generating state vectors for 3D visualizer..."
+  let seedPoly = spreadPoly 5
+  let seedState = fromList [((MkPixel 4 3, seedPoly), 1), ((MkPixel 3 4, seedPoly), 1)]
+  let initialUniverse = MkUniverseState emptySubstrate seedState
+  let steps = runSimulationSteps initialUniverse 10
+  let jsonStr = serializeSimulation steps
+  let dest = "/var/home/justin/Projects/Nat-Science/visualizer/public/state_vectors.json"
+  Right () <- writeFile dest jsonStr
+    | Left err => putStrLn "Failed to write state_vectors.json to visualizer/public/"
+  putStrLn "Successfully exported 10 simulation ticks to visualizer/public/state_vectors.json!"
 
 main : IO ()
 main = do
@@ -167,3 +198,6 @@ main = do
   
   putStrLn "\n--- Adaptive Cycle: Scales ---"
   Evolution.Adaptive_Cycle_Scales.main
+
+  putStrLn "\n--- State Serialization Bridge ---"
+  exportSimulationJSON
