@@ -1,0 +1,6 @@
+build/
+depends/
+.DS_Store
+*.swp
+*.o
+*.so
