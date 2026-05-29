@@ -2,8 +2,6 @@
 *.idr linguist-language=Idris
 *.ipkg linguist-language=Idris
 
-# Treat Literate Markdown Wiki files as Idris code for Linguist stats
-Library/Wiki/**/*.md linguist-language=Idris
 
 # Don't count generated test output
 **/output linguist-generated
