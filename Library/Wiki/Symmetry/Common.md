@@ -1,5 +1,5 @@
 ```idris
-module Physics.Common
+module Symmetry.Common
 
 import QuickCheck
 import Simplex.Core
@@ -8,7 +8,7 @@ import Evolution.Cycle
 import Evolution.Init
 import Evolution.Gate
 
-import Physics.System.CosmicPartition
+import System.CosmicPartition
 
 %default total
 

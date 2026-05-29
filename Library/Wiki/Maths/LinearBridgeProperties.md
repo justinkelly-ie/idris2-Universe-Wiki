@@ -12,9 +12,9 @@ import Math.Multiset
 import Math.Pixel
 import Math.IntPolynumber
 import Math.SpreadPolynumber
-import Physics.SigmaBridge
-import Physics.Analysis.Radiation
-import Physics.Particles.Photon
+import SigmaBridge
+import Derivation.Radiation
+import Symmetry.Photon
 
 %default total
 ```

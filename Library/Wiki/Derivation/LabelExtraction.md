@@ -1,10 +1,10 @@
 ```idris
-module Physics.LabelExtraction
+module Derivation.LabelExtraction
 
 import QuickCheck
 import Simplex.Core
 import Evolution.Gate
-import Physics.Common
+import Symmetry.Common
 
 %default total
 

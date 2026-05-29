@@ -3,12 +3,12 @@
 This test script iterates across the complete 137-scale hierarchy of the `LUniverse` cosmology, verifying the exact sequence of coherence, decoherence, and the emergence of the 38-scale Eddington limit.
 
 ```idris
-module Physics.Ascension_Probe
+module Scale.Ascension_Probe
 
 import Simplex.Core
 import Evolution.Gate
-import Physics.Scales.PythagoreanFixedPoint
-import Physics.Scales.ScaleTrajectory
+import Scale.PythagoreanFixedPoint
+import Scale.ScaleTrajectory
 
 import Math.Multiset
 import Math.IntPolynumber

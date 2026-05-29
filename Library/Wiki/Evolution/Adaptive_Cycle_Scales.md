@@ -11,9 +11,9 @@ import Evolution.Cycle
 import Evolution.Transform
 import Evolution.Gate
 import Evolution.Clock
-import Physics.Scales.PythagoreanFixedPoint
-import Physics.Scales.ScaleTrajectory
-import Physics.Scales.IceGeometry
+import Scale.PythagoreanFixedPoint
+import Scale.ScaleTrajectory
+import Scale.IceGeometry
 import Math.Multiset
 import Math.IntPolynumber
 import Math.SpreadPolynumber

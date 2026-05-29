@@ -1,11 +1,11 @@
 ```idris
-module Physics.CosmologicalScaling
+module Scale.CosmologicalScaling
 
 import QuickCheck
 import Simplex.Core
-import Physics.Analysis.Cosmology
-import Physics.System.CosmicPartition
-import Physics.Common
+import Derivation.Cosmology
+import System.CosmicPartition
+import Symmetry.Common
 
 %default total
 

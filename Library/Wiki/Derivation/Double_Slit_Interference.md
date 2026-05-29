@@ -5,7 +5,7 @@ In this model, rather than representing wave-particle duality through continuous
 The "interference pattern" observed on the detector screen is purely an arithmetic projection of Spread Polynomials.
 
 ```idris
-module Physics.Double_Slit_Interference
+module Derivation.Double_Slit_Interference
 
 import QuickCheck
 import Math.SpreadPolynumber

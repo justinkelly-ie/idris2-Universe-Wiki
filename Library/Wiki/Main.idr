@@ -1,18 +1,18 @@
 module Main
 
 import QuickCheck
-import Physics.Common
-import Physics.LabelExtraction
-import Physics.DimensionalCausality
-import Physics.EpochInjection
-import Physics.CosmologicalScaling
-import Physics.Elements
+import Symmetry.Common
+import Derivation.LabelExtraction
+import Derivation.DimensionalCausality
+import Derivation.EpochInjection
+import Scale.CosmologicalScaling
+import Compound.Elements
 import Simplex.Properties
 import Evolution.Evolution
 -- New tests
 import Code.Engine_Verification
-import Physics.Double_Slit_Interference
-import Physics.Ascension_Probe
+import Derivation.Double_Slit_Interference
+import Scale.Ascension_Probe
 import Evolution.Adaptive_Cycle_Pipeline
 import Evolution.Adaptive_Cycle_Findings
 import Evolution.Adaptive_Cycle_Chemistry
@@ -158,7 +158,7 @@ main = do
   
   putStrLn "\n--- Test Results ---"
   putStrLn tableStr
-  Right () <- writeFile "Library/Wiki/Physics/Verification_Matrix.md" (preamble ++ tableStr)
+  Right () <- writeFile "Library/Wiki/Verification_Matrix.md" (preamble ++ tableStr)
     | Left err => putStrLn "Failed to write Verification_Matrix.md file."
   
   let codeTableStr = markdownTable [
@@ -186,17 +186,17 @@ main = do
   Right () <- writeFile "Library/Wiki/Code/Verification_Matrix.md" (codePreamble ++ codeTableStr)
     | Left err => putStrLn "Failed to write Code/Verification_Matrix.md file."
 
-  putStrLn "\nTests complete. Results written to Library/Wiki/Physics/Verification_Matrix.md and Library/Wiki/Code/Verification_Matrix.md!"
+  putStrLn "\nTests complete. Results written to Library/Wiki/Verification_Matrix.md and Library/Wiki/Code/Verification_Matrix.md!"
   
   -- Run the individual tests that print their own outputs
   putStrLn "\n--- Engine Verification ---"
   Code.Engine_Verification.main
   
   putStrLn "\n--- Double Slit Interference ---"
-  Physics.Double_Slit_Interference.main
+  Derivation.Double_Slit_Interference.main
 
   putStrLn "\n--- Ascension Probe ---"
-  Physics.Ascension_Probe.main
+  Scale.Ascension_Probe.main
   
   putStrLn "\n--- Adaptive Cycle: Pipeline ---"
   Evolution.Adaptive_Cycle_Pipeline.main

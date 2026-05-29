@@ -1,10 +1,10 @@
 ```idris
-module Physics.Elements
+module Compound.Elements
 
 import QuickCheck
-import Physics.Elements.Water
-import Physics.Elements.Methane
-import Physics.Elements.Carbon
+import Compound.Water
+import Compound.Methane
+import Compound.Carbon
 import Simplex.Core
 import Math.Chromogeometry
 

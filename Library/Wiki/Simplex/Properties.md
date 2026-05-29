@@ -5,7 +5,7 @@ import QuickCheck
 import Simplex.Core
 import Math.Multiset
 import Math.Chromogeometry
-import Physics.Common
+import Symmetry.Common
 
 %default total
 

@@ -1,10 +1,10 @@
 ```idris
-module Physics.DimensionalCausality
+module Derivation.DimensionalCausality
 
 import QuickCheck
 import Simplex.Core
 import Evolution.Gate
-import Physics.Common
+import Symmetry.Common
 
 %default total
 

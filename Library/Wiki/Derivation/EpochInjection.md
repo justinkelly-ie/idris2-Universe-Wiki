@@ -1,15 +1,15 @@
 ```idris
-module Physics.EpochInjection
+module Derivation.EpochInjection
 
 import QuickCheck
 import Simplex.Core
 import Evolution.Gate
 import Evolution.Init
 import Evolution.Cycle
-import Physics.Common
-import Physics.DimensionalCausality
+import Symmetry.Common
+import Derivation.DimensionalCausality
 
-import Physics.System.CosmicPartition
+import System.CosmicPartition
 
 %default total
 

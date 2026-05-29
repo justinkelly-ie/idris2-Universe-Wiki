@@ -39,7 +39,7 @@ import Math.Multiset
 import Evolution.Cycle
 import Evolution.Clock
 import Evolution.Transform
-import Physics.Common
+import Symmetry.Common
 
 %default total
 ```
