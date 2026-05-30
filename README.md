@@ -4,7 +4,7 @@
 
 [![Idris2](https://img.shields.io/badge/Idris2-LUniverse-blue.svg)](https://github.com/idris-lang/Idris2)
 [![Wiki](https://img.shields.io/badge/Wiki-Living_Docs-red.svg)]()
-[![Tests](https://img.shields.io/badge/QuickCheck-74_passing-green.svg)]()
+[![Tests](https://img.shields.io/badge/QuickCheck-76_passing-green.svg)]()
 
 ---
 
@@ -14,7 +14,7 @@ Welcome to the **Natural Universe Wiki**. This repository serves as the definiti
 
 Unlike traditional static wikis, this codebase is **executable**. Every chapter combines deep theoretical physics, chromogeometric mathematical diagrams, and **Literate Idris 2 (`.md`) property-based proofs**. 
 
-When compiled, the wiki executes **74 system-level QuickCheck properties** to structurally verify that the laws of nature — Conservation of Mass, Monotonic Causality, Baryogenesis, and Pythagorean Fixed Points — are strictly enforced by the underlying multiset algebra.
+When compiled, the wiki executes **76 system-level QuickCheck properties** to structurally verify that the laws of nature — Conservation of Mass, Monotonic Causality, Baryogenesis, and Pythagorean Fixed Points — are strictly enforced by the underlying multiset algebra.
 
 ---
 

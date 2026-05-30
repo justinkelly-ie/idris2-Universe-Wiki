@@ -24,5 +24,9 @@ This matrix tracks the automated testing suite for the core Cosmology, Chromogeo
 | Hydrogen Minimal Lag | Verifies that Hydrogen's coordinate lag is minimal and non-trivial. | ✅ PASS | OK, passed 100 tests . |
 | Oxygen Valence Acceptance | Verifies that Oxygen accepts exactly 2 electrons. | ✅ PASS | OK, passed 100 tests . |
 | Oxygen Latent Partition | Verifies that Oxygen partitions the dark energy pool into exactly 16 quanta. | ✅ PASS | OK, passed 100 tests . |
+| Monotonic Time Dilation | Verifies that local time dilation multipliers strictly increase as local multiset lag density increases. | ✅ PASS | OK, passed 100 tests . |
+| Black Hole Redshift Asymptote | Proves that at the ultimate black hole threshold (Z = 137), the local gravitational redshift scales precisely to 347/210. | ✅ PASS | OK, passed 100 tests . |
+| Vacuum Pair Charge Conservation | Verifies that spontaneous Schwinger pair creation preserves the net charge of the universe exactly. | ✅ PASS | OK, passed 100 tests . |
+| Vacuum Pair Annihilation | Verifies that virtual particle and antiparticle polynumbers perfectly annihilate to zero amplitude. | ✅ PASS | OK, passed 100 tests . |
 | Ascension Mass Conservation | Verifies that when a state condenses into a single macro-node during topological ascension, its total mass (Leibniz Lag) is perfectly conserved. | ✅ PASS | OK, passed 100 tests . |
 | Empty Vacuum Anchor | Ensures an empty universe cannot spontaneously ascend scales. | ✅ PASS | OK, passed 100 tests . |
