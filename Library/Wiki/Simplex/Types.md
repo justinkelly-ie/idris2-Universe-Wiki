@@ -185,11 +185,25 @@ computeTwist : Metric -> Metric -> Metric -> IntPolynumber
 
 ### Spread Propagators
 
-Bridge functions that map spatial chromogeometric curvature directly into an active time-evolution Polynumber operator.
+Bridge functions that map spatial chromogeometric curvature directly into an active time-evolution Polynumber operator. These leverage symbolic inductive Chebyshev expressions to structurally guarantee recurrence parity, and dynamically co-evolve spacetime with field flow.
 
 ```idris
+-- Inductive symbolic recurrence expressions representing the Chebyshev recurrence
+data SpreadPolyExpr : Nat -> Type
+
+-- Evaluates a symbolic expression to a concrete RLE IntPolynumber
+evalSpreadPolyExpr : SpreadPolyExpr n -> IntPolynumber
+
+-- Constructs the canonical symbolic recurrence representation for a given degree
+makeSpreadPolyExpr : (n : Nat) -> SpreadPolyExpr n
+
+-- Localized rational spread twist projection
 generateLocalSpreadPoly : Metric -> Substrate -> Cell0 -> IntPolynumber
 
+-- Einsteinian co-evolution deforming spacetime edge multiplicities proportionally to energy
+deformSubstrate : Substrate -> SparseMaxel -> Substrate
+
+-- Evolved spatial step returning the dynamically co-evolved Substrate and State Vector
 stepUniverseLocalized : Integer -> Metric -> Substrate -> SparseMaxel -> (Substrate, SparseMaxel)
 ```
 
