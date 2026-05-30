@@ -1,4 +1,4 @@
-# idris2-Universe-Wiki
+# idris2-LUniverse-Wiki
 
 **The living, executable mathematical and physical documentation for the [Nat-Science](https://github.com/justinkelly-ie/Nat-Science) model.**
 
@@ -51,7 +51,7 @@ Every directory in the Literate Wiki has a dedicated **`Index.md`** serving as t
 
 ### [1. Discrete Geometry & Grid Architecture (Simplex)](Library/Wiki/Simplex/Index.md)
 *   **[Simplicial Architecture](Library/Wiki/Simplex/Simplicial_Architecture.md)** — Introduction to discrete spatial pixels and directed acyclic substrates.
-*   **[Topological Types & Relations](Library/Wiki/Simplex/Types.md)** — Core type definitions of basis powers, polynomial terms, and coordinate bindings.
+*   **[Multiset Types & Relations](Library/Wiki/Simplex/Types.md)** — Core type definitions of basis powers, polynomial terms, and coordinate bindings.
 *   **[Monotonic Simplex Properties](Library/Wiki/Simplex/Properties.md)** — Proofs of monotonic coordinate relations and labeled graph extractions.
 *   **[Spread Polynomial Resonance](Library/Wiki/Simplex/Spread_Polynomial.md)** — Helical locks behind biological alpha helices, DNA, and neurological folds.
 *   **[Ontological Log (olog)](Library/Wiki/Simplex/olog.md)** — Category-theory ontology of simplicial grid relationships.
@@ -124,10 +124,10 @@ The wiki compiles into a binary that executes all property tests and writes the 
 ### Inside the `fedora-toolbox-44` container:
 
 ```bash
-# 1. Clone sibling repos (Nat-Science, idris2-Universe, idris2-Multiset, idris2-Chromogeometry, idris2-QuickCheck)
+# 1. Clone sibling repos (Nat-Science, idris2-LUniverse, idris2-Multiset, idris2-Chromogeometry, idris2-QuickCheck)
 
 # 2. Build the wiki package:
-pack build idris2-Universe-Wiki.ipkg
+pack build idris2-LUniverse-Wiki.ipkg
 
 # 3. Execute the living proofs:
 ./build/exec/luniverse

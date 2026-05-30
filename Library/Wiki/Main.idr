@@ -304,7 +304,7 @@ main = do
   let resMobiusCrossRatio = quickCheck prop_crossRatioAbsorption
 
   let tableStr = markdownTable [
-        ("Label Extraction", "Verifies that UniverseState can be serialized to a non-empty string label for topological graphing.", res1),
+        ("Label Extraction", "Verifies that UniverseState can be serialized to a non-empty string label for multiset coordinate mapping.", res1),
         ("Strict Causality", "Ensures that the directed causal graph (Substrate) maintains strictly monotonic time ordering with no cycles.", res2),
         ("Injected Baryogenesis Epoch", "Validates that skipping the vacuum and starting exactly at Phase 2 dynamically unfolds the Primorial 137-Grid, leading to the Baryogenesis phase transition (MatterGate).", res3),
         ("Eddington Scaling Bound", "Confirms the polynomial scaling limits align with the Eddington Number (~10^81) within the target epochs (e.g. 38 scales).", res4),
@@ -321,11 +321,11 @@ main = do
         ("Black Hole Redshift Asymptote", "Proves that at the ultimate black hole threshold (Z = 137), the local gravitational redshift scales precisely to 347/210.", resTimeDilationAsymptote),
         ("Vacuum Pair Charge Conservation", "Verifies that spontaneous Schwinger pair creation preserves the net charge of the universe exactly.", resPairChargeNeutral),
         ("Vacuum Pair Annihilation", "Verifies that virtual particle and antiparticle polynumbers perfectly annihilate to zero amplitude.", resPairAnnihilation),
-        ("Möbius Zero-Remainder", "Verifies that any pure null-quadrance radiation ensemble carries exactly zero Boole-Möbius resolution remainder — the topological ground state before baryogenesis.", resMobiusZero),
+        ("Möbius Zero-Remainder", "Verifies that any pure null-quadrance radiation ensemble carries exactly zero Boole-Möbius resolution remainder — the multiset ground state before baryogenesis.", resMobiusZero),
         ("Sub-Threshold No Baryogenesis", "Verifies that a single-photon radiation state does not trigger the baryogenesis phase transition below the 128-node vacuum capacity limit.", resMobiusSubThreshold),
         ("Over-Threshold Baryogenesis", "Verifies that a radiation state exceeding 128 nodes fires the baryogenesis trigger, forcing the 2D spectral sheet to twist into 3D baryonic matter.", resMobiusOverThreshold),
         ("Möbius Cross-Ratio Absorption", "Verifies that the discrete Möbius cross-ratio matrix collapses the temporal component of any null-diagonal photon to zero, leaving a pure spatial matter impulse.", resMobiusCrossRatio),
-        ("Ascension Mass Conservation", "Verifies that when a state condenses into a single macro-node during topological ascension, its total mass (Leibniz Lag) is perfectly conserved.", res10),
+        ("Ascension Mass Conservation", "Verifies that when a state condenses into a single macro-node during multiset scale ascension, its total mass (Leibniz Lag) is perfectly conserved.", res10),
         ("Empty Vacuum Anchor", "Ensures an empty universe cannot spontaneously ascend scales.", res11)
       ]
   
@@ -351,7 +351,7 @@ main = do
   let codeTableStr = markdownTable [
         ("Substrate Merge Lag Aggregation", "Verifies that merging two causal substrates strictly aggregates their Leibniz lag (causal density).", res12),
         ("SparseMaxel Superposition Lag Preservation", "Verifies that superposing two SparseMaxels perfectly preserves the total state lag (Quantum Probability / Mass).", res13),
-        ("Evolved Universe Synchronisation", "Verifies that every active, evolved UniverseState remains perfectly topologically synchronised across all epochs.", res14),
+        ("Evolved Universe Synchronisation", "Verifies that every active, evolved UniverseState remains perfectly coordinate-synchronized across all epochs.", res14),
         ("QTT SigmaBridge Round-Trip", "Verifies that melting a state vector into a linear dependent multiset and freezing it back preserves the exact physical identity.", res15),
         ("Radiation Timelessness Proof", "Verifies that a pure Radiation ensemble has exactly zero temporal lag in the Minkowski metric, proving photon timelessness.", res16),
         ("Periodic Table Stability Boundary", "Verifies the exact Feynman stability limit Z <= 137 dynamically across the elements.", res17),
@@ -372,12 +372,12 @@ main = do
   let codePreamble = unlines [
         "# Code Architecture Verification Matrix",
         "",
-        "This matrix tracks the property-based verification of the underlying mathematical topology engines (`Math.Multiset` and `Simplex.Core`).",
+        "This matrix tracks the property-based verification of the underlying mathematical multiset engines (`Math.Multiset` and `Simplex.Core`).",
         "",
         "### Core Properties",
         "* **Causal Aggregation**: Ensures that when causal graphs merge, no directed edges are lost or spuriously created.",
         "* **State Superposition**: Verifies that polynomial state vectors linearly superpose, guaranteeing Conservation of Energy at the geometric level.",
-        "* **Synchronisation**: The core topological gluing condition — a state is only valid if every particle coordinate actually exists in the local causal graph.",
+        "* **Synchronisation**: The core multiset coordinate gluing — a state is only valid if every particle coordinate actually exists in the local causal graph.",
         "",
         "---",
         ""

@@ -66,4 +66,4 @@ Decoherence occurs precisely when the generation number $n = k+1$ contains a pri
 
 This is recursive composition made visible: a single molecular coordinate, iterated across 137 scales, reproduces the entire cosmological structure — not because of any special "fractal" mechanism, but because the Multiset engine evaluates the same polynomial at every level.
 
-See `Physics.Scales.ScaleTrajectory` for the implementation and `Physics.Scales.PythagoreanFixedPoint` for the fixed point derivation.
+See `Scale.ScaleTrajectory` for the implementation and `Scale.PythagoreanFixedPoint` for the fixed point derivation.

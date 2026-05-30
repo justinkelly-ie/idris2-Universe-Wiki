@@ -21,7 +21,7 @@ import Symmetry.Common
 %default total
 ```
 
-## Topological Stability under Scaling
+## Multiset Stability under Scaling
 
 We verify that as the universe evolves recursively across arbitrary depth epochs:
 1. The state vector remains strictly synchronized with the causal substrate DAG (guaranteeing that no particle coordinates drift or fracture).

@@ -55,7 +55,7 @@ public export
 verifyStateSynchronised : UniverseState -> Bool
 verifyStateSynchronised u = isSynchronised u.substrate u.stateVector
 
-||| Rigorously proves the topological gluing condition: every active particle coordinate
+||| Rigorously proves the multiset coordinate gluing: every active particle coordinate
 ||| in the State Vector must possess a corresponding causal node in the Substrate DAG.
 ||| This invariant must hold true across all recursive epoch depths.
 public export

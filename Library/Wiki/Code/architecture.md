@@ -21,7 +21,7 @@ Physics/
 │   ├── Transform.idr               Partition, Resonance, Ascension gates + CanAscend proof
 │   ├── Cycle.idr                   applyGate, stepRelationalTime, runAdaptiveCycle, runEpochs
 │   ├── Identity.idr                [J,J] diagonal — PersistentIdentity, ScaleOrder
-│   └── Ontogeny alias              (via Physics.Scales.Phylogeny)
+│   └── Ontogeny alias              (via Scale.Phylogeny)
 │
 ├── Scales/                     ← Scale Models (2 modules)
 │   ├── Phylogeny.idr               Fork/merge lineage tree (Ontogeny = PersistentIdentity)
@@ -56,8 +56,8 @@ Physics/
 | `BaseScale` | `ScaleLevel 0` constructor | `Evolution.Transform` |
 | `AscendedScale` | `ScaleLevel (S n)` constructor (requires `CanAscend` proof) | `Evolution.Transform` |
 | `PersistentIdentity` | The [J,J] diagonal at a ScaleOrder | `Evolution.Identity` |
-| `Ontogeny` | Alias for `PersistentIdentity` in phylogenetic context | `Physics.Scales.Phylogeny` |
-| `LineageNode` | Identity + linear Substrate + lag | `Physics.Scales.Phylogeny` |
+| `Ontogeny` | Alias for `PersistentIdentity` in phylogenetic context | `Scale.Phylogeny` |
+| `LineageNode` | Identity + linear Substrate + lag | `Scale.Phylogeny` |
 
 ---
 
@@ -360,7 +360,7 @@ LDepMultiset a ((item, count) :: xs) = LAddM item count (LDepMultiset a xs)
 ```
 
 ### The Linear Execution Engine (`Simplex.SigmaLinear`)
-With the structural contents explicitly indexed in the type signature, the execution layer functions exactly like a topological shader. It guarantees perfectly deterministic geometric shredding (like computing a boundary) purely at the type level, while executing blazingly fast in-place memory mutations at runtime.
+With the structural contents explicitly indexed in the type signature, the execution layer functions exactly like a multiset mapping pipeline. It guarantees perfectly deterministic geometric shredding (like computing a boundary) purely at the type level, while executing blazingly fast in-place memory mutations at runtime.
 
 ```idris
 public export
@@ -391,7 +391,7 @@ The `sigmaFreezeMaxel` operation provides a static cross-section of the linear u
 
 ## §14 The Dynamic Phase Transition
 
-With the `Sigma-Linear` architecture correctly established, topological reductions completely bypass the structural duplication penalty.
+With the `Sigma-Linear` architecture correctly established, multiset reductions completely bypass the structural duplication penalty.
 
 ### Physical Shredding (`runBoundary`)
 Rather than folding, mapping, or reducing an immutable tree, `runBoundary` operates entirely on the Sigma Type `DynamicSubstrate`:
@@ -400,8 +400,8 @@ Rather than folding, mapping, or reducing an immutable tree, `runBoundary` opera
 3. It shreds the graph linearly in-place via `applyBoundary`.
 4. It packs the output perfectly back into a `DynamicSparseMaxel`.
 
-### Topological Condensation
-The engine perfectly models topological collapse (the transition from micro-states into a macro-node at Scale N+1) by exploiting the Sigma loop:
+### Multiset Condensation
+The engine perfectly models multiset scale condensation (the transition from micro-states into a macro-node at Scale N+1) by exploiting the Sigma loop:
 1. **Melt Instantiation**: `sigmaMelt` safely wraps the state for transition.
 2. **Fluid Grind**: The linear types dynamically execute updates in-place.
 3. **Freeze State**: The universe is photographed into a pure topological graph for visualization via `sigmaFreeze`.

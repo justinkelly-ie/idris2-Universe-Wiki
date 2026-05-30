@@ -80,7 +80,7 @@ Water's bond triangle at $(4,3) \leftrightarrow (3,4)$ with Oxygen at origin is 
 
 The electron at position (4,3) has the same spread as the bond. At this coordinate, the distinction between **particle** and **interaction** dissolves.
 
-See `Physics.Elements.Water` and `Physics.Scales.PythagoreanFixedPoint` for the full derivation.
+See `Compound.Water` and `Scale.PythagoreanFixedPoint` for the full derivation.
 
 ---
 

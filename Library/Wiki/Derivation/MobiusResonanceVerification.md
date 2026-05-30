@@ -1,12 +1,12 @@
 # Möbius Twist & Substrate Resonance
 
-This section documents and verifies the **topological phase transition** at the heart of the LUniverse model: the moment the 2D spectral information substrate twists through a Möbius cross-ratio and resolves into observable 3D baryonic matter.
+This section documents and verifies the **multiset scale transition** at the heart of the LUniverse model: the moment the 2D spectral information substrate twists through a Möbius cross-ratio and resolves into observable 3D baryonic matter.
 
 ## Classical Primer
 
 The Möbius transformation is the unique conformal bijection of the Riemann sphere. In standard complex analysis it takes the form $w = (az + b)/(cz + d)$. In our discrete integer model there is no complex plane and no division — but the Möbius *cross-ratio matrix* survives intact as a purely algebraic $2\times 2$ integer operator.
 
-The **Boole-Möbius zero-remainder** is the algebraic signature of a state that lives entirely in the null subspace of the Red Minkowski metric ($Q_{\text{Red}} = x^2 - y^2 = 0$). Every such state is a pure photon ensemble: timeless, massless, and topologically closed. Its net Leibniz residue is exactly zero — no matter knots, no locked charge, no persistent identity.
+The **Boole-Möbius zero-remainder** is the algebraic signature of a state that lives entirely in the null subspace of the Red Minkowski metric ($Q_{\text{Red}} = x^2 - y^2 = 0$). Every such state is a pure photon ensemble: timeless, massless, and multiplicity-balanced. Its net Leibniz residue is exactly zero — no matter knots, no locked charge, no persistent identity.
 
 The **Baryogenesis threshold** is the moment this clean photonic substrate tips over the 128-node ($2^7$) vacuum capacity limit. At that point a Pigeonhole conflict is triggered: the 2D sheet cannot accommodate the spectral pressure and *twists* — an irreversible topological fold from the $2^7 = 128$-state spectral pool into the $3^3 = 27$-state baryonic triad. Quarks are born.
 
@@ -57,6 +57,16 @@ genBalancedRadiationState = do
   p   <- genNullPixel
   let amp = fromList [((1, 0), 1)]
   pure (addMultiset (AddM (p, amp) 1 ZeroM) (AddM (p, amp) (-1) ZeroM))
+
+||| Generates a pure radiation state with a single photon node, having
+||| a multiplicity well below the 128-node threshold (e.g. 1 to 50).
+public export
+genPureRadiationState : Gen SparseMaxel
+genPureRadiationState = do
+  p   <- genNullPixel
+  m   <- choose (1, 50)
+  let amp = fromList [((1, 0), 1)]
+  pure (AddM (p, amp) m ZeroM)
 ```
 
 ---
@@ -65,7 +75,7 @@ genBalancedRadiationState = do
 
 ### 1. Möbius Zero-Remainder Invariant
 
-A radiation state whose outer-count contributions are perfectly balanced (summing to zero after weighting by inner amplitude) carries exactly zero Boole-Möbius residue. This is the topological ground state of the pre-baryonic 2D substrate — no net information accumulation, no causal knots, no persistent identity:
+A radiation state whose outer-count contributions are perfectly balanced (summing to zero after weighting by inner amplitude) carries exactly zero Boole-Möbius residue. This is the multiset ground state of the pre-baryonic 2D substrate — no net information accumulation, no causal knots, no persistent identity:
 
 ```idris
 ||| Helper: verifies that a balanced radiation state always has zero Möbius remainder.
@@ -77,7 +87,7 @@ checkZeroRemainder pip =
     Just r  => property (isZeroRemainder r)
 
 ||| Verifies that any balanced null-quadrance radiation ensemble has exactly
-||| zero Boole-Möbius resolution remainder — the topological ground state
+||| zero Boole-Möbius resolution remainder — the multiset ground state
 ||| of the 2D spectral substrate before baryogenesis.
 public export
 prop_mobiusZeroRemainder : Property

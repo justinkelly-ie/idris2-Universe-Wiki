@@ -23,7 +23,7 @@ import System.PeriodicTable
 %default total
 ```
 
-## Topological Stability of the Elements
+## Multiset Stability of the Elements
 
 We rigorously verify the stability boundary across the elemental spectrum. For any atomic number $Z$, the generated coordinate state is stable (survives the resonance gate) if and only if $Z \le 137$.
 

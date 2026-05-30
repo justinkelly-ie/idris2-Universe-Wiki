@@ -71,7 +71,7 @@ prop_ascensionConservesMass = forAll genUniverseStateWithDepth (MkFn (\(depth, u
 
 ## Empty Vacuum Anchor
 
-Verifies that if a state vector is entirely empty, it can never trigger a topological ascension (because there is no geometric mass to cross the capacity limit).
+Verifies that if a state vector is entirely empty, it can never trigger a multiset scale ascension (because there is no geometric mass to cross the capacity limit).
 
 ```idris
 public export

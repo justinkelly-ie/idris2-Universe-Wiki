@@ -8,7 +8,7 @@ The most critical architectural achievement in this codebase is the **Pure Integ
 
 ### The Problem with Extraneous Abstraction
 Earlier iterations of this engine relied heavily on complex topological wrappers (`Cell0`, `Chain1`, `Simplex`), fractional algebraic structures (`RationalTopology`), and strictly-typed Quantitative Type Theory (Linear Types). While mathematically elegant, these abstractions caused several issues:
-1. **Performance**: Processing $O(N^2)$ topological reductions via nested recursive structures caused compilation and execution times to lag exponentially.
+1. **Performance**: Processing $O(N^2)$ multiset reductions via nested recursive structures caused compilation and execution times to lag exponentially.
 2. **Compiler Exhaustion**: The Idris 2 compiler struggled to statically track deeply nested dependent linear pairs (`LDepMultiset`) and `Sigma` types, causing type-checker hang-ups.
 3. **Precision Loss**: Rational fractions and floating-point divisions natively drop bits or introduce floating-point drift over deep iterational scales.
 

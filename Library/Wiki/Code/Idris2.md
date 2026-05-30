@@ -56,10 +56,10 @@ main = do
 | Test | Description | Status | Details |
 |------|-------------|--------|---------|
 | Sigma-Linear Dynamic Epoch | Verifies that the legacy SparseMaxel can be melted into a strict DynamicUniverse DPair and mutated linearly in-place, securely preserving topological bounds. | ✅ PASS | OK, count incremented dynamically. |
-| Topological Boundary Operator | Verifies that the engine linearly shreds Substrates (edges) into 0-Chains (vertices) perfectly aligned with the pure algebraic definition (`computeBoundaryIndex`). | ✅ PASS | OK, constraints enforced (B=+10, A=-10). |
+| Multiset Boundary Operator | Verifies that the engine linearly shreds Substrates (edges) into 0-Chains (vertices) perfectly aligned with the pure algebraic definition (`computeBoundaryIndex`). | ✅ PASS | OK, constraints enforced (B=+10, A=-10). |
 
 ### Architectural Conclusions
 1. The Linear Dependent Multisets properly serialize and deserialize to/from unrestricted runtime structures.
 2. The tail-recursive extraction method (`freezeLDepAcc`) successfully bypasses the compiler's strict linearity guardrails around unrestricted constructors like `(::)`.
 3. The underlying memory updates execute exactly as formalized by the type-level specification, wrapped securely within a `DPair`.
-4. **Topological Reductions:** The engine linearly shreds Substrates (edges) into 0-Chains (vertices) perfectly aligned with the pure algebraic definition of the boundary operator (`computeBoundaryIndex`), proving that geometric constraints scale without exploding compilation times.
+4. **Multiset Reductions:** The engine linearly shreds Substrates (edges) into 0-Chains (vertices) perfectly aligned with the pure algebraic definition of the boundary operator (`computeBoundaryIndex`), proving that geometric constraints scale without exploding compilation times.
