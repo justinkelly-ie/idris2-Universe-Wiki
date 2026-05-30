@@ -5,6 +5,7 @@ import QuickCheck
 import Simplex.Core
 import Evolution.Gate
 import Symmetry.Common
+import Data.String
 
 %default total
 
@@ -16,6 +17,8 @@ public export
 prop_spacetimeHasLabel : Property
 prop_spacetimeHasLabel = forAll genUniverseStateWithDepth (MkFn (\(depth, univ) => 
     let label = show univ
-    in property (length label > 0)
+        isJson = isPrefixOf "{\"substrate\":" label
+        isNotPlaceholder = label /= "[UniverseState]"
+    in property (isJson && isNotPlaceholder)
   ))
 ```

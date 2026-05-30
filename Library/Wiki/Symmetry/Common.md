@@ -18,7 +18,7 @@ of any UniverseState if a universe fails a test!
 ```idris
 public export
 Show UniverseState where
-  show (MkUniverseState sub field) = "[UniverseState]"
+  show univ = serializeUniverseState univ
 
 public export
 genUniverseStateWithDepth : Gen (Nat, UniverseState)
