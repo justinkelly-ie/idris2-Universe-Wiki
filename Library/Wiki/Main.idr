@@ -11,6 +11,7 @@ import Simplex.Properties
 import Evolution.Evolution
 -- New tests
 import Code.Engine_Verification
+import System.PeriodicTableVerification
 import Derivation.Double_Slit_Interference
 import Scale.Ascension_Probe
 import Evolution.Adaptive_Cycle_Pipeline
@@ -215,6 +216,9 @@ main = do
   putStrLn "Running Test 16: Radiation Timelessness Proof"
   let res16 = quickCheck prop_radiationTimelessnessProof
 
+  putStrLn "Running Test 17: Periodic Table Stability Boundary"
+  let res17 = quickCheck prop_periodicTableStability
+
   let tableStr = markdownTable [
         ("Label Extraction", "Verifies that UniverseState can be serialized to a non-empty string label for topological graphing.", res1),
         ("Strict Causality", "Ensures that the directed causal graph (Substrate) maintains strictly monotonic time ordering with no cycles.", res2),
@@ -254,7 +258,8 @@ main = do
         ("SparseMaxel Superposition Lag Preservation", "Verifies that superposing two SparseMaxels perfectly preserves the total state lag (Quantum Probability / Mass).", res13),
         ("Evolved Universe Synchronisation", "Verifies that every active, evolved UniverseState remains perfectly topologically synchronised across all epochs.", res14),
         ("QTT SigmaBridge Round-Trip", "Verifies that melting a state vector into a linear dependent multiset and freezing it back preserves the exact physical identity.", res15),
-        ("Radiation Timelessness Proof", "Verifies that a pure Radiation ensemble has exactly zero temporal lag in the Minkowski metric, proving photon timelessness.", res16)
+        ("Radiation Timelessness Proof", "Verifies that a pure Radiation ensemble has exactly zero temporal lag in the Minkowski metric, proving photon timelessness.", res16),
+        ("Periodic Table Stability Boundary", "Verifies the exact Feynman stability limit Z <= 137 dynamically across the elements.", res17)
       ]
       
   let codePreamble = unlines [

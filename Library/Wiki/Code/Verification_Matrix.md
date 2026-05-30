@@ -16,3 +16,4 @@ This matrix tracks the property-based verification of the underlying mathematica
 | Evolved Universe Synchronisation | Verifies that every active, evolved UniverseState remains perfectly topologically synchronised across all epochs. | ✅ PASS | OK, passed 100 tests . |
 | QTT SigmaBridge Round-Trip | Verifies that melting a state vector into a linear dependent multiset and freezing it back preserves the exact physical identity. | ✅ PASS | OK, passed 100 tests . |
 | Radiation Timelessness Proof | Verifies that a pure Radiation ensemble has exactly zero temporal lag in the Minkowski metric, proving photon timelessness. | ✅ PASS | OK, passed 100 tests . |
+| Periodic Table Stability Boundary | Verifies the exact Feynman stability limit Z <= 137 dynamically across the elements. | ✅ PASS | OK, passed 100 tests . |
