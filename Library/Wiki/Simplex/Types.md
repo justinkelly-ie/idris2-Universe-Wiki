@@ -45,38 +45,38 @@ High-performance representation for large-scale computation. Each element carrie
 
 ---
 
-## Layer 3: Geometry, Coordinates & Topological Simplices (`Math.Topology.Simplex`, `Math.Topology.Chain`)
+## Layer 3: Geometry, Coordinates & Discrete Elements (Historical: Simplices & Chains)
 
-The `idris2-RationalTopology` package completely defines discrete metrical geometry using a Simplicial Complex architecture!
+Discrete metrical geometry is defined using structured coordinate multisets!
 
-### Simplices (Cells) — The formal building blocks of geometry
+### Coordinates & Edge Relations — The formal building blocks of geometry
 
 ```idris
--- A 0-Simplex (0-Cell) is a naked coordinate point (vertex) in space.
+-- A spatial coordinate cell (Historical: 0-Simplex / 0-Cell) is a naked coordinate point (vertex) in space.
 0 Cell0 : Type
 Cell0 = Pixel Integer
 
--- A 1-Simplex (1-Cell) is a directed edge connecting two 0-Cells.
+-- A directed causal relation (Historical: 1-Simplex / 1-Cell) is a directed edge connecting two Cell0s.
 0 Cell1 : Type
 Cell1 = (Cell0, Cell0)
 
--- A 2-Simplex (2-Cell) is a face/triangle defined by three 0-Cells.
+-- A triadic evaluation domain (Historical: 2-Simplex / 2-Cell) is a face/triangle defined by three Cell0s.
 0 Cell2 : Type
 Cell2 = (Cell0, Cell0, Cell0)
 ```
 
-### Chains — Multisets of Simplices (The Shape of the Topology)
+### Multisets of Coordinate Elements (The Shape of the Space)
 
 ```idris
--- A 0-Chain is a formal multiset of vertices (dust/pixels).
+-- A Vertex Multiset (Historical: 0-Chain / Chain0) is a formal multiset of vertices (dust/pixels).
 0 Chain0 : Type
 Chain0 = Multiset Cell0
 
--- A 1-Chain is a formal multiset of directed edges (causal connections).
+-- An Edge Multiset (Historical: 1-Chain / Chain1) is a formal multiset of directed edges (causal connections).
 0 Chain1 : Type
 Chain1 = Multiset Cell1
 
--- A 2-Chain is a formal multiset of triangles (spread metrical evaluation domain).
+-- A Triangle Multiset (Historical: 2-Chain / Chain2) is a formal multiset of triangles (spread metrical evaluation domain).
 0 Chain2 : Type
 Chain2 = Multiset Cell2
 ```

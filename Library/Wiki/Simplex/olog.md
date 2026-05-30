@@ -1,15 +1,15 @@
 # Mathematical Olog
 
-This document maps the concrete Idris data structures and logic of the Linear Physics engine to their formal counterparts in Category Theory, Topology, and Rational Trigonometry.
+This document maps the concrete Idris data structures and logic of the Linear Physics engine to their formal counterparts in Category Theory, Discrete Geometry, and Rational Trigonometry.
 
-## Core Topology & Sheaf Theory (Core.idr)
+## Multiset Causal Flow & Boundary (Core.idr)
 
 ```mermaid
 graph LR
-    subgraph Sheaf Theory
-        A[Poset Category<br>Base Space] -->|mapped by| B[Sheaf of Polynumbers]
-        B -->|contains| C[Local Section<br>Fiber Value]
-        C -->|aggregated to| D[Global Section<br>Total State]
+    subgraph Category & Multiset Theory
+        A[Causal Poset Category<br/>Substrate Base] -->|mapped by| B[Maxel State Vector<br/>SparseMaxel]
+        B -->|contains| C[Coordinate Entry<br/>Amplitude]
+        C -->|aggregated to| D[Cosmological Configuration<br/>UniverseState]
     end
     subgraph Physics Mapping
         E[Spacetime Causal Graph] -->|mapped by| F[Wavefunction State Vector]
@@ -22,20 +22,22 @@ graph LR
     D -.-> H
 ```
 
-| Concept / Category Theory | Physics Alias | Concrete Implementation |
+| Concept / Category Theory | Physics Alias | Concrete Multiset Implementation |
 |---|---|---|
-| **Object of the Base Category / Point of the Poset** | Spacetime Voxel / Chromogeometric Coordinate / Spin State | A two-component integer pair `(x, y)` where each component carries a magnitude evaluable under any of the three Metrics. |
-| **Fiber Value / Local Section of the Sheaf** | Quantum Amplitude / Polynumber / Fock State / Energy Coefficient | A Run-Length Encoded multiset `IntPolynumber = Multiset (Nat, Nat)` of (alpha, beta) pairs. |
-| **Poset Category / Base Space of the Sheaf** | Spacetime Manifold / Causal Graph / Spin Foam | A `Multiset (Geometry, Geometry)` of directed edges. Each entry encodes causal precedence. |
-| **Sheaf of Polynumbers over the Poset Base Space** | Fiber Bundle / Wavefunction / Fock Space State Vector | `Multiset (Pixel Integer, IntPolynumber)` mapping each pixel to its local quantum amplitude polynomial. |
-| **Global Section of the Sheaf** | Total Cosmological State / Universe Configuration | `(Multiset (G,G), Multiset (G, Vector))` - the unified product type. |
-| **Total Weight of Arrow Ideals** | Local Proper Time / Causal Mesh Delay | Sum of multiplicities of all directed edges in the causal graph. |
-| **Coproduct in the Poset Category** | Causal Merge / Time Step Advance | `addMultiset` over the substrate causal graph. |
-| **Stalk of the Sheaf at a Point** | Point Particle / Localized Wavepacket | A unit section isolated from the global multiset. |
-| **Coproduct of Sheaf Sections** | Quantum Superposition / State Overlap | `addMultiset` over the state vector. |
+| **Object of the Base Category / Point of the Causal Poset** | Spacetime Voxel / Chromogeometric Coordinate | A two-component integer pair `(x, y)` where each component carries a magnitude evaluable under any of the three Metrics. |
+| **Coordinate Entry / Local Value (Historical: Local Section / Fiber Value)** | Quantum Amplitude / Polynumber / Fock State | A Run-Length Encoded multiset `IntPolynumber = Multiset (Nat, Nat)` of (alpha, beta) power pairs. |
+| **Causal Poset Category / Substrate Base (Historical: Base Space of Sheaf)** | Spacetime Manifold / Causal Graph / Spin Foam | A `Multiset (Geometry, Geometry)` of directed edges. Each entry encodes causal precedence. |
+| **Maxel State Vector / Wavefunction (Historical: Sheaf of Polynumbers / Fiber Bundle)** | State Vector / Fock Space Configuration | `Multiset (Pixel Integer, IntPolynumber)` mapping each active coordinate pixel to its quantum amplitude polynomial. |
+| **Cosmological Configuration (Historical: Global Section of Sheaf)** | Total Cosmological State / Universe Configuration | `(Multiset (G,G), Multiset (G, Vector))` - the unified product type `UniverseState`. |
+| **Total Weight of Arrow Ideals** | Local Proper Time / Causal Mesh Delay | Sum of multiplicities of all directed edges in the causal graph (`substrateLag`). |
+| **Coproduct in the Base Category** | Causal Merge / Time Step Advance | `addMultiset` over the substrate causal graph. |
+| **Coordinate Entry at a Point (Historical: Stalk of Sheaf at a Point)** | Point Particle / Localized Wavepacket | A unit coordinate-amplitude pair isolated from the global multiset. |
+| **Coproduct of State Vectors** | Quantum Superposition / State Overlap | `addMultiset` over the state vector. |
 | **Global Sections Cardinality** | Total Energy / Occupation Number | Total sum of all polynomial coefficients. |
-| **Restriction Map of the Sheaf** | Local Measurement / Projection | Filtering or evaluating a local section. |
-| **Gluing Condition of the Sheaf** | Causal Consistency / No-Signalling Check | Synchronization check between Substrate and State Vector. |
+| **Coordinate Filter (Historical: Sheaf Restriction Map)** | Local Measurement / Projection | Filtering or evaluating a local section (`restrictToPixel`). |
+| **Causal Parity Gluing (Historical: Gluing Condition of Sheaf)** | Causal Consistency / No-Signalling Check | Synchronization check (`isSynchronised`) verifying that every active state coordinate has causal history in the Substrate. |
+| **Boundary Operator ($\partial$)** | Causal Flow Boundary | The exact difference vector between target and source (`boundaryNL`). |
+| **Chain Boundary Map** | Causal Boundary Shredder | Shredding edge relation multisets to vertex flow weights (`runBoundary` / `applyBoundary`). |
 
 ---
 
@@ -60,19 +62,19 @@ graph LR
 
 ## Unification & Replacement Models (Multiset.idr)
 
-The `Multiset` data structure replaces the need for categorical wrappers. By flattening everything to pure RLE arrays, we map categorical definitions directly to linear structures:
-*   **FiberBundle:** The unified state space metric over the topological manifold.
-*   **StateVector / State Space:** The quantum super-position states in a linear structure.
-*   **Direct Image Sheaf:** A transformation mapping sections across layers.
+The `Multiset` data structure replaces the need for continuous categorical wrappers. By flattening everything to pure RLE arrays, we map categorical definitions directly to discrete, high-performance linear structures:
+*   **Maxel State Vector:** The unified state space metric over the coordinate manifold (historically: `FiberBundle`).
+*   **StateVector / State Space:** The quantum superposition states in a linear structure.
+*   **Direct Image Filter:** A transformation mapping sections across scale layers (historically: `Direct Image Sheaf`).
 
 ---
 
 ## Phase Transitions & Ascension (Transform.idr & Init.idr)
 
 *   **Polynomial expansion of Triadic Spreads** (from `SpreadPolynumber.idr`)
-*   **Initial Object of the Sheaf Manifold Layout** (from `Init.idr`) — The primordial vacuum state.
-*   **Sheaf Restriction Map / Tensor Factorisation over Objects** — The 128/27 polynomial splitting phase.
-*   **Sheaf Radical Subtraction / Ideal of the Polynumber Algebra** — The $n=13$ resonance shattering modulo.
-*   **Corestriction / Left Adjoint Direct Image Section** — The ascension condensation producing a singleton FiberBundle at Scale N+1.
-*   **Sheaf Cohomology Section Existence Criteria / Gluing Condition** — The 3 requirements for Holonomy closure.
-*   **Direct Image Sheaf Monad Functor Verification Section** — The three-fold gauge barrier execution.
+*   **Initial Object of the Causal Layout** (from `Init.idr`) — The primordial vacuum state.
+*   **Coordinate Filter Map / Tensor Factorisation over Objects** — The 128/27 polynomial splitting phase (historically: Sheaf Restriction Map).
+*   **Radical Subtraction / Ideal of the Polynumber Algebra** — The $n=13$ resonance shattering modulo (historically: Sheaf Radical Subtraction).
+*   **Left Adjoint Direct Image State Vector** — The ascension condensation producing a singleton state vector at Scale N+1 (historically: Corestriction).
+*   **Boundary Flow Parity / Causal Consistency / Holonomy Closure** — The `SigmaGate` boundary conservation and holonomy closure requirements (historically: Sheaf Cohomology Section Existence Criteria).
+*   **Direct Image State Vector Monad Functor Verification Section** — The three-fold gauge barrier execution (historically: Direct Image Sheaf Monad Functor Verification Section).

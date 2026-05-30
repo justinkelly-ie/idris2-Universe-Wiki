@@ -1,6 +1,6 @@
-# Simplicial Topology & Multiset Invariants
+# Discrete Geometry & Multiset Invariants
 
-This module establishes the property-based verification of the core algebraic and topological invariants of the simplicial geometry engine. Every component of our spacetime manifold and state vector is modeled purely as a discrete Multiset, ensuring exact conservation laws.
+This module establishes the property-based verification of the core algebraic and causal invariants of the discrete geometry engine. Every component of our spacetime substrate and state vector is modeled purely as a discrete Multiset, ensuring exact conservation laws.
 
 ## 1. Causal Density Aggregation
 
@@ -44,11 +44,11 @@ prop_superposeLag = forAll genUniverseStateWithDepth (MkFn (\(d1, u1) =>
     in property (stateLag superposed == expectedLag)))))
 ```
 
-## 3. Evolved State Topological Gluing (Synchronisation)
+## 3. Evolved State Causal Alignment & Gluing (Synchronisation)
 
-A state vector is only physically valid if it is topologically glued to its spacetime manifold. We verify that as the universe evolves recursively across arbitrary depth epochs, every single active coordinate assigned a non-zero amplitude in the `SparseMaxel` strictly possesses a corresponding causal node in the `Substrate` DAG. 
+A state vector is only physically valid if it is causally aligned to its spacetime substrate. We verify that as the universe evolves recursively across arbitrary depth epochs, every single active coordinate assigned a non-zero amplitude in the `SparseMaxel` strictly possesses a corresponding causal node in the `Substrate` DAG. 
 
-An unsynchronized coordinate would represent a physical particle existing in a location with no causal history—a topological fracture that is mathematically prohibited.
+An unsynchronized coordinate would represent a physical particle existing in a location with no causal history—a causal fracture that is mathematically prohibited.
 
 ```idris
 public export

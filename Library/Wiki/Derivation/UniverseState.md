@@ -26,7 +26,7 @@ The directed acyclic graph (DAG) of causal evolution. It dictates *which* spatia
 ### `SparseMaxel`
 The quantum state vector mapping discrete spatial coordinates to their current amplitude (energy/mass polynomial).
 * **Math Type**: `Multiset (Cell0, IntPolynumber)` (A multiset of coordinate-polynomial pairs).
-* **Aliases / Historical Names**: `FiberBundle`, `StateVector`, `Sheaf`.
+* **Aliases / Historical Names**: `FiberBundle`, `StateVector`, `Sheaf` (Historical / Deprecated).
 
 ## The Building Blocks (The "Friends")
 

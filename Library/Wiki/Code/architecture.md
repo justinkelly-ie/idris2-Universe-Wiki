@@ -50,7 +50,7 @@ Physics/
 
 | Design Name | Compiled Name | Module |
 |---|---|---|
-| `FiberBundle` | `Multiset (Geometry, Amplitude)` | `Physics.Core` |
+| `SparseMaxel` (Historical: `FiberBundle`) | `Multiset (Geometry, Amplitude)` | `Physics.Core` |
 | `SpacetimeManifold` / `Maxel` | `Substrate` = `Multiset (Geometry, Geometry)` | `Physics.Core` |
 | `ScaleLevel n` | `data ScaleLevel : (scaleLevel : Nat) -> Type` | `Evolution.Transform` |
 | `BaseScale` | `ScaleLevel 0` constructor | `Evolution.Transform` |
@@ -69,7 +69,7 @@ Physics/
 | `LatentState` | `partitionLogic` output (coeff ≥ 128) | Dark Energy — Red Metric — 2^7 potential |
 | `VisibleState` | `partitionLogic` output (coeff < 128) | Matter — Blue Metric — 3^3 manifest states |
 | `ResidueState` | `evaluateResonance` output | Background — Green Metric — dark matter dust |
-| `partitionLogic` | `Transform.partitionLogic : Integer -> Geometry -> IntPolynumber -> (SparseMaxel, SparseMaxel)` | Sheaf restriction |
+| `partitionLogic` | `Transform.partitionLogic : Integer -> Geometry -> IntPolynumber -> (SparseMaxel, SparseMaxel)` | Coordinate filter (Historical: sheaf restriction) |
 
 A system "levels up" if and only if `buildAscensionCapacities` constructs a `CanAscend` proof.
 
@@ -376,7 +376,7 @@ This forces the engine to securely shred graph edges without garbage collection 
 
 ## §13 The Cosmological Bridge (`Physics.SigmaBridge`)
 
-The pure topology representations and the high-speed `SigmaLinear` execution pathways are explicitly linked via a Cosmological Bridge. This safely transforms pure geometry into the linearly mutated environment and back.
+The pure multiset graph representations and the high-speed `SigmaLinear` execution pathways are explicitly linked via a Cosmological Bridge (`SigmaBridge`). This safely transforms pure geometry into the linearly mutated environment and back.
 
 ### Melt (Dynamic Universe Instantiation)
 The `sigmaMeltChain` and `sigmaMeltMaxel` operations condense mathematical truth into a runtime `DynamicUniverse` (a Dependent Pair). 
@@ -404,6 +404,6 @@ Rather than folding, mapping, or reducing an immutable tree, `runBoundary` opera
 The engine perfectly models multiset scale condensation (the transition from micro-states into a macro-node at Scale N+1) by exploiting the Sigma loop:
 1. **Melt Instantiation**: `sigmaMelt` safely wraps the state for transition.
 2. **Fluid Grind**: The linear types dynamically execute updates in-place.
-3. **Freeze State**: The universe is photographed into a pure topological graph for visualization via `sigmaFreeze`.
+3. **Freeze State**: The universe is photographed into a pure multiset graph for visualization via `sigmaFreeze`.
 
 **Status: ✅ COMPILED**
