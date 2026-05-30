@@ -22,6 +22,7 @@ modules = Symmetry.Common,
           Evolution.Adaptive_Cycle_Scales,
           Maths.LinearBridgeProperties,
           Code.Engine_Verification,
-          System.PeriodicTableVerification
+          System.PeriodicTableVerification,
+          Invariant.PauliExclusionVerification
 
 main = Main

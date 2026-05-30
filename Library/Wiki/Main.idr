@@ -12,6 +12,7 @@ import Evolution.Evolution
 -- New tests
 import Code.Engine_Verification
 import System.PeriodicTableVerification
+import Invariant.PauliExclusionVerification
 import Derivation.Double_Slit_Interference
 import Scale.Ascension_Probe
 import Evolution.Adaptive_Cycle_Pipeline
@@ -219,6 +220,12 @@ main = do
   putStrLn "Running Test 17: Periodic Table Stability Boundary"
   let res17 = quickCheck prop_periodicTableStability
 
+  putStrLn "Running Test 18: Pauli Exclusion on Unique Coordinates"
+  let res18 = quickCheck prop_exclusionOnUniqueCoords
+
+  putStrLn "Running Test 19: Pauli Exclusion Violated on Overlap"
+  let res19 = quickCheck prop_exclusionViolatedOnOverlap
+
   let tableStr = markdownTable [
         ("Label Extraction", "Verifies that UniverseState can be serialized to a non-empty string label for topological graphing.", res1),
         ("Strict Causality", "Ensures that the directed causal graph (Substrate) maintains strictly monotonic time ordering with no cycles.", res2),
@@ -259,7 +266,9 @@ main = do
         ("Evolved Universe Synchronisation", "Verifies that every active, evolved UniverseState remains perfectly topologically synchronised across all epochs.", res14),
         ("QTT SigmaBridge Round-Trip", "Verifies that melting a state vector into a linear dependent multiset and freezing it back preserves the exact physical identity.", res15),
         ("Radiation Timelessness Proof", "Verifies that a pure Radiation ensemble has exactly zero temporal lag in the Minkowski metric, proving photon timelessness.", res16),
-        ("Periodic Table Stability Boundary", "Verifies the exact Feynman stability limit Z <= 137 dynamically across the elements.", res17)
+        ("Periodic Table Stability Boundary", "Verifies the exact Feynman stability limit Z <= 137 dynamically across the elements.", res17),
+        ("Pauli Exclusion (Unique)", "Verifies that coordinate systems with unique elements strictly satisfy the Pauli Exclusion Principle.", res18),
+        ("Pauli Exclusion (Overlap)", "Verifies that injecting duplicate coordinate assignments correctly triggers a Pauli Exclusion violation.", res19)
       ]
       
   let codePreamble = unlines [
