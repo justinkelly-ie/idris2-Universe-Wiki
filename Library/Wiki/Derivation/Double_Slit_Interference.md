@@ -49,14 +49,36 @@ restrictGate (S k) =
   let r = restrictGate k 
   in if r == 15 then 0 else S r
 
-prop_fringesAreDeterministic : Property
-prop_fringesAreDeterministic = forAll {a = (Nat, Nat, Nat)} {prop = Bool} arbitrary (MkFn (\(gateDeg, num, den) =>
+genTwoNats : Gen (Nat, Nat)
+genTwoNats = do
+  x <- arbitrary
+  y <- arbitrary
+  pure (x, y)
+
+public export
+verifyIntegerSpread : Nat -> Nat -> Bool
+verifyIntegerSpread gateDeg num =
+  let spread = MkSpread (MkFraction num 1)
+  in projectsToBrightFringe (restrictGate gateDeg) spread
+
+public export
+verifyVacuumSpread : Nat -> Nat -> Bool
+verifyVacuumSpread num den =
   let den' = if den == 0 then 1 else den
       spread = MkSpread (MkFraction num den')
-      -- It should either be a bright or dark fringe, there is no ambiguity.
-      -- We just evaluate it to ensure it completes without crashing.
-      res = projectsToBrightFringe (restrictGate gateDeg) spread
-  in res == True || res == False))
+  in projectsToBrightFringe 0 spread
+
+||| Proves that any integer spread (denominator = 1) always evaluates to an integer
+||| result, projecting to a bright fringe regardless of the gate degree.
+public export
+prop_integerSpreadsAreBright : Property
+prop_integerSpreadsAreBright = forAll genTwoNats (MkFn (\(gateDeg, num) => verifyIntegerSpread gateDeg num))
+
+||| Proves that the Vacuum Gate (n=1) always evaluates to an integer (0),
+||| projecting to a bright fringe for any arbitrary fractional spread.
+public export
+prop_vacuumIsAlwaysBright : Property
+prop_vacuumIsAlwaysBright = forAll genTwoNats (MkFn (\(num, den) => verifyVacuumSpread num den))
 ```
 
 ## Main Test Runner
@@ -65,6 +87,8 @@ prop_fringesAreDeterministic = forAll {a = (Nat, Nat, Nat)} {prop = Bool} arbitr
 public export
 main : IO ()
 main = do
-  let res1 = QuickCheck.quickCheck prop_fringesAreDeterministic
-  putStrLn $ "prop_fringesAreDeterministic: " ++ res1.msg
+  let res1 = QuickCheck.quickCheck prop_integerSpreadsAreBright
+  putStrLn $ "prop_integerSpreadsAreBright: " ++ res1.msg
+  let res2 = QuickCheck.quickCheck prop_vacuumIsAlwaysBright
+  putStrLn $ "prop_vacuumIsAlwaysBright: " ++ res2.msg
 ```
