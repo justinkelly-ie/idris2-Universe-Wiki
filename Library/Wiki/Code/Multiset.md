@@ -58,30 +58,32 @@ runDynamicEpoch (c ** mesh) = (nextContents c ** stepUniverse mesh)
 3. **The Compiler Guarantee:** The compiler structurally refuses to compile the codebase unless `stepUniverse` flawlessly executes the exact mathematics defined in `nextContents`.
 4. **The Performance Rescue:** Because the engine is wrapped in a `DPair`, the exact structure `c` is hidden from the compiler at compile-time and only evaluated dynamically as the program runs. The compiler no longer explodes trying to simulate the universe!
 
-## 4. Impact on the Homological Boundary Operator ($\partial$)
-
-This breakthrough beautifully redefines how topological simplexes and boundary operators work in the engine. 
-
-Previously, a runtime boundary operator calculated both the math and the execution simultaneously. Under the DPair architecture, the Boundary Operator ($\partial$) perfectly splits into two distinct layers:
-
+## 4. Impact on the Causal Flow Boundary Operator ($\partial$)
+ 
+This breakthrough beautifully redefines how boundary operators and coordinate flow work in the engine. 
+ 
+Under the DPair architecture, the Causal Boundary Operator ($\partial$) perfectly splits into two distinct layers:
+ 
 ### The Mathematical Specification
-A pure, type-level function that mathematically calculates how a 1-chain (edges) reduces to a 0-chain (vertices):
+A pure, type-level function that mathematically calculates how an Edge Multiset (directed substrate relations) reduces to a Vertex Multiset (vertex flow weights):
 ```idris
-computeBoundaryIndex : List (Edge, Nat) -> List (Geometry, Integer)
+computeBoundaryIndex : List (Edge, Integer) -> List (Geometry, Integer)
 ```
-*Because this is a pure mathematical function, topological laws like $\partial \partial = 0$ can be proven against it directly.*
-
+*Because this is a pure mathematical function, boundary conservation laws like $\partial \partial = 0$ can be proven against it directly.*
+ 
 ### The Linear Execution Engine
-A highly optimized, in-place linear mutation function that shred edges into vertices, governed strictly by the formal spec:
+A highly optimized, in-place linear mutation function that shreds edges into vertices, governed strictly by the formal spec:
 ```idris
-applyBoundary : (1 chain : LDepOneChain edges) -> LDepSparseMaxel (computeBoundaryIndex edges)
+applyBoundary : {0 edges : List (Edge, Integer)} -> 
+                (1 chain : LDepSubstrate edges) -> 
+                LDepSparseMaxel (computeBoundaryIndex edges)
 ```
-
+ 
 ### The Dynamic Wrapper
 Finally, the boundary operator wraps the conversion in a DPair, allowing shifting fluid meshes to be processed dynamically at runtime without freezing the compiler:
 ```idris
-runBoundary : DynamicOneChain -> DynamicSparseMaxel
+runBoundary : DynamicSubstrate -> DynamicSparseMaxel
 runBoundary (edges ** chain) = (computeBoundaryIndex edges ** applyBoundary chain)
 ```
-
-**Conclusion:** The Dependent Pair mechanism allows the physics engine to digest shifting topological structures dynamically while forcing the underlying linear memory execution to flawlessly mirror the pure algebraic topology of the specification.
+ 
+**Conclusion:** The Dependent Pair mechanism allows the physics engine to digest shifting causal structures dynamically while forcing the underlying linear memory execution to flawlessly mirror the pure algebraic specifications.
