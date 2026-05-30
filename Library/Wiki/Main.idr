@@ -7,6 +7,7 @@ import Derivation.DimensionalCausality
 import Derivation.EpochInjection
 import Derivation.GravitationalTimeDilationVerification
 import Derivation.VacuumPairProductionVerification
+import Derivation.MobiusResonanceVerification
 import Compound.CarbonVerification
 import Compound.HydrogenVerification
 import Compound.OxygenVerification
@@ -290,6 +291,18 @@ main = do
   putStrLn "Running Test 29: S13 Evaluation Non-Trivial"
   let res29 = quickCheck prop_s13NonTrivial
 
+  putStrLn "Running Test 9.10: Möbius Zero-Remainder Invariant"
+  let resMobiusZero = quickCheck prop_mobiusZeroRemainder
+
+  putStrLn "Running Test 9.11: Sub-Threshold No Baryogenesis"
+  let resMobiusSubThreshold = quickCheck prop_subThresholdNoBaryogenesis
+
+  putStrLn "Running Test 9.12: Over-Threshold Triggers Baryogenesis"
+  let resMobiusOverThreshold = quickCheck prop_overThresholdTriggersBaryogenesis
+
+  putStrLn "Running Test 9.13: Cross-Ratio Möbius Photon Absorption"
+  let resMobiusCrossRatio = quickCheck prop_crossRatioAbsorption
+
   let tableStr = markdownTable [
         ("Label Extraction", "Verifies that UniverseState can be serialized to a non-empty string label for topological graphing.", res1),
         ("Strict Causality", "Ensures that the directed causal graph (Substrate) maintains strictly monotonic time ordering with no cycles.", res2),
@@ -308,6 +321,10 @@ main = do
         ("Black Hole Redshift Asymptote", "Proves that at the ultimate black hole threshold (Z = 137), the local gravitational redshift scales precisely to 347/210.", resTimeDilationAsymptote),
         ("Vacuum Pair Charge Conservation", "Verifies that spontaneous Schwinger pair creation preserves the net charge of the universe exactly.", resPairChargeNeutral),
         ("Vacuum Pair Annihilation", "Verifies that virtual particle and antiparticle polynumbers perfectly annihilate to zero amplitude.", resPairAnnihilation),
+        ("Möbius Zero-Remainder", "Verifies that any pure null-quadrance radiation ensemble carries exactly zero Boole-Möbius resolution remainder — the topological ground state before baryogenesis.", resMobiusZero),
+        ("Sub-Threshold No Baryogenesis", "Verifies that a single-photon radiation state does not trigger the baryogenesis phase transition below the 128-node vacuum capacity limit.", resMobiusSubThreshold),
+        ("Over-Threshold Baryogenesis", "Verifies that a radiation state exceeding 128 nodes fires the baryogenesis trigger, forcing the 2D spectral sheet to twist into 3D baryonic matter.", resMobiusOverThreshold),
+        ("Möbius Cross-Ratio Absorption", "Verifies that the discrete Möbius cross-ratio matrix collapses the temporal component of any null-diagonal photon to zero, leaving a pure spatial matter impulse.", resMobiusCrossRatio),
         ("Ascension Mass Conservation", "Verifies that when a state condenses into a single macro-node during topological ascension, its total mass (Leibniz Lag) is perfectly conserved.", res10),
         ("Empty Vacuum Anchor", "Ensures an empty universe cannot spontaneously ascend scales.", res11)
       ]

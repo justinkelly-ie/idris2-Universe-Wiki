@@ -28,5 +28,10 @@ This matrix tracks the automated testing suite for the core Cosmology, Chromogeo
 | Black Hole Redshift Asymptote | Proves that at the ultimate black hole threshold (Z = 137), the local gravitational redshift scales precisely to 347/210. | ✅ PASS | OK, passed 100 tests . |
 | Vacuum Pair Charge Conservation | Verifies that spontaneous Schwinger pair creation preserves the net charge of the universe exactly. | ✅ PASS | OK, passed 100 tests . |
 | Vacuum Pair Annihilation | Verifies that virtual particle and antiparticle polynumbers perfectly annihilate to zero amplitude. | ✅ PASS | OK, passed 100 tests . |
+| Möbius Zero-Remainder | Verifies that any pure null-quadrance radiation ensemble carries exactly zero Boole-Möbius resolution remainder — the topological ground state before baryogenesis. | ❌ FAIL | Falsifiable, after 1 tests:
+[(((3, 3), [((1, 0), 1)]), 1)] |
+| Sub-Threshold No Baryogenesis | Verifies that a single-photon radiation state does not trigger the baryogenesis phase transition below the 128-node vacuum capacity limit. | ✅ PASS | OK, passed 100 tests . |
+| Over-Threshold Baryogenesis | Verifies that a radiation state exceeding 128 nodes fires the baryogenesis trigger, forcing the 2D spectral sheet to twist into 3D baryonic matter. | ✅ PASS | OK, passed 100 tests . |
+| Möbius Cross-Ratio Absorption | Verifies that the discrete Möbius cross-ratio matrix collapses the temporal component of any null-diagonal photon to zero, leaving a pure spatial matter impulse. | ✅ PASS | OK, passed 100 tests . |
 | Ascension Mass Conservation | Verifies that when a state condenses into a single macro-node during topological ascension, its total mass (Leibniz Lag) is perfectly conserved. | ✅ PASS | OK, passed 100 tests . |
 | Empty Vacuum Anchor | Ensures an empty universe cannot spontaneously ascend scales. | ✅ PASS | OK, passed 100 tests . |
