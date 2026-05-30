@@ -5,6 +5,7 @@ import Symmetry.Common
 import Derivation.LabelExtraction
 import Derivation.DimensionalCausality
 import Derivation.EpochInjection
+import Derivation.GravitationalTimeDilationVerification
 import Compound.CarbonVerification
 import Compound.HydrogenVerification
 import Compound.OxygenVerification
@@ -216,6 +217,12 @@ main = do
   putStrLn "Running Test 9.5: Oxygen Latent Partition"
   let resOxygenPartition = quickCheck prop_oxygenDividesLatent
 
+  putStrLn "Running Test 9.6: Monotonic Time Dilation"
+  let resTimeDilationMonotonic = quickCheck prop_lagWarpMonotonic
+
+  putStrLn "Running Test 9.7: Black Hole Time Dilation Redshift Asymptote"
+  let resTimeDilationAsymptote = quickCheck prop_lagWarpAsymptote
+
   putStrLn "Running Test 10: Evolution Mass Conservation on Ascension"
   let res10 = quickCheck prop_ascensionConservesMass
 
@@ -290,6 +297,8 @@ main = do
         ("Hydrogen Minimal Lag", "Verifies that Hydrogen's coordinate lag is minimal and non-trivial.", resHydrogen),
         ("Oxygen Valence Acceptance", "Verifies that Oxygen accepts exactly 2 electrons.", resOxygenValence),
         ("Oxygen Latent Partition", "Verifies that Oxygen partitions the dark energy pool into exactly 16 quanta.", resOxygenPartition),
+        ("Monotonic Time Dilation", "Verifies that local time dilation multipliers strictly increase as local multiset lag density increases.", resTimeDilationMonotonic),
+        ("Black Hole Redshift Asymptote", "Proves that at the ultimate black hole threshold (Z = 137), the local gravitational redshift scales precisely to 347/210.", resTimeDilationAsymptote),
         ("Ascension Mass Conservation", "Verifies that when a state condenses into a single macro-node during topological ascension, its total mass (Leibniz Lag) is perfectly conserved.", res10),
         ("Empty Vacuum Anchor", "Ensures an empty universe cannot spontaneously ascend scales.", res11)
       ]

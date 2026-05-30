@@ -4,7 +4,7 @@
 
 [![Idris2](https://img.shields.io/badge/Idris2-LUniverse-blue.svg)](https://github.com/idris-lang/Idris2)
 [![Wiki](https://img.shields.io/badge/Wiki-Living_Docs-red.svg)]()
-[![Tests](https://img.shields.io/badge/QuickCheck-70_passing-green.svg)]()
+[![Tests](https://img.shields.io/badge/QuickCheck-72_passing-green.svg)]()
 
 ---
 
@@ -14,7 +14,7 @@ Welcome to the **Natural Universe Wiki**. This repository serves as the definiti
 
 Unlike traditional static wikis, this codebase is **executable**. Every chapter combines deep theoretical physics, chromogeometric mathematical diagrams, and **Literate Idris 2 (`.md`) property-based proofs**. 
 
-When compiled, the wiki executes **70 system-level QuickCheck properties** to structurally verify that the laws of nature — Conservation of Mass, Monotonic Causality, Baryogenesis, and Pythagorean Fixed Points — are strictly enforced by the underlying multiset algebra.
+When compiled, the wiki executes **72 system-level QuickCheck properties** to structurally verify that the laws of nature — Conservation of Mass, Monotonic Causality, Baryogenesis, and Pythagorean Fixed Points — are strictly enforced by the underlying multiset algebra.
 
 ---
 
@@ -65,6 +65,7 @@ Every directory in the Literate Wiki has a dedicated **`Index.md`** serving as t
 *   **[Dimensional Causality](Library/Wiki/Derivation/DimensionalCausality.md)** — Rigorous coordinate-sum strict monotonicity proving the absence of causal cycles.
 *   **[Double-Slit Interference](Library/Wiki/Derivation/Double_Slit_Interference.md)** — Wave projection and bright/dark fringe properties on the discrete grid.
 *   **[Epoch Injection & Baryogenesis](Library/Wiki/Derivation/EpochInjection.md)** — Starting simulations at the Phase 2 baryogenesis threshold.
+*   **[Gravitational Time Dilation](Library/Wiki/Derivation/GravitationalTimeDilationVerification.md)** — Relational clock warping driven by computational Leibniz lag density.
 *   **[Label Extraction](Library/Wiki/Derivation/LabelExtraction.md)** — Dynamic serialization of the `UniverseState` into JSON labels.
 *   **[Theorems of Discrete Physics](Library/Wiki/Derivation/Theorems.md)** — Core mathematical theorems of discrete physics.
 *   **[UniverseState Structure](Library/Wiki/Derivation/UniverseState.md)** — Causal substrate and state vector functional primitives.
