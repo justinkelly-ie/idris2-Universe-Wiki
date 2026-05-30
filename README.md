@@ -73,6 +73,7 @@ Every directory in the Literate Wiki has a dedicated **`Index.md`** serving as t
 
 ### [4. Evolution & The Adaptive Cycle (Evolution)](Library/Wiki/Evolution/Index.md)
 *   **[Evolutionary Cycles](Library/Wiki/Evolution/Evolution.md)** — Introduction to universal cycle equations and state transitions.
+*   **[Snakes & Ladders Analogy](Library/Wiki/Evolution/Snakes_and_Ladders_Analogy.md)** — A playful, Lego-brick analogy to understand the inner workings of the universe engine.
 *   **[Adaptive Cycle: Pipeline](Library/Wiki/Evolution/Adaptive_Cycle_Pipeline.md)** — Simulating the Partition, Resonance, and Ascension phases.
 *   **[Adaptive Cycle: Findings](Library/Wiki/Evolution/Adaptive_Cycle_Findings.md)** — Static proofs of the 210 primorial grid limit and alpha trajectory.
 *   **[Adaptive Cycle: Chemistry](Library/Wiki/Evolution/Adaptive_Cycle_Chemistry.md)** — Mappings of electron spreads and molecular stability.
