@@ -20,3 +20,13 @@ This matrix tracks the property-based verification of the underlying mathematica
 | Pauli Exclusion (Unique) | Verifies that coordinate systems with unique elements strictly satisfy the Pauli Exclusion Principle. | ✅ PASS | OK, passed 100 tests . |
 | Pauli Exclusion (Overlap) | Verifies that injecting duplicate coordinate assignments correctly triggers a Pauli Exclusion violation. | ❌ FAIL | Falsifiable, after 1 tests:
 [(((-9, -1), []), 2)] |
+| Meson Color Confinement | Verifies that any generated Meson dyad is colorless under the ColorConfined interface. | ✅ PASS | OK, passed 100 tests . |
+| Baryon Color Confinement | Verifies that any generated Baryon triad is colorless under the ColorConfined interface. | ✅ PASS | OK, passed 100 tests . |
+| Pixel Energy Conservation | Verifies that pixel transitions conserve Blue Quadrance spatial extension. | ✅ PASS | OK, passed 100 tests . |
+| Multiset Energy Conservation | Verifies that multiset transitions conserve mass-energy degree. | ✅ PASS | OK, passed 100 tests . |
+| Primorial Manifold Conserved | Verifies that a state pool with exactly 210 states is recognized as physically intact. | ✅ PASS | OK, passed 100 tests . |
+| Primorial Manifold Violated | Verifies that any state pool with a non-210 size is recognized as physically violated. | ✅ PASS | OK, passed 100 tests . |
+| Gluon Transaction Confinement | Verifies that executing a gluon transaction (matrix rotation) dynamically preserves color confinement. | ✅ PASS | OK, passed 100 tests . |
+| Gluon Transaction Stability | Verifies that the gluon transaction is structurally stable and coordinates are preserved. | ✅ PASS | OK, passed 100 tests . |
+| S13 Evaluation Matches | Verifies that the evaluated S13 resonance matches the S13 polynomial. | ✅ PASS | OK, passed 100 tests . |
+| S13 Evaluation Non-Trivial | Verifies that the high-order S13 resonance is non-trivial. | ✅ PASS | OK, passed 100 tests . |

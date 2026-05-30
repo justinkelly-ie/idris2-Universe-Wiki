@@ -13,6 +13,11 @@ import Evolution.Evolution
 import Code.Engine_Verification
 import System.PeriodicTableVerification
 import Invariant.PauliExclusionVerification
+import Invariant.ColorConfinementVerification
+import Invariant.EnergyConservationVerification
+import Invariant.PrimorialConservationVerification
+import System.HadronGluonDynamicsVerification
+import System.Spread13Verification
 import Derivation.Double_Slit_Interference
 import Scale.Ascension_Probe
 import Evolution.Adaptive_Cycle_Pipeline
@@ -226,6 +231,36 @@ main = do
   putStrLn "Running Test 19: Pauli Exclusion Violated on Overlap"
   let res19 = quickCheck prop_exclusionViolatedOnOverlap
 
+  putStrLn "Running Test 20: Meson Color Confinement"
+  let res20 = quickCheck prop_mesonConfinement
+
+  putStrLn "Running Test 21: Baryon Color Confinement"
+  let res21 = quickCheck prop_baryonConfinement
+
+  putStrLn "Running Test 22: Pixel Energy Conservation"
+  let res22 = quickCheck prop_energyConservationPixel
+
+  putStrLn "Running Test 23: Multiset Energy Conservation"
+  let res23 = quickCheck prop_energyConservationMultiset
+
+  putStrLn "Running Test 24: Primorial Manifold Conserved"
+  let res24 = quickCheck prop_primorialManifoldConserved
+
+  putStrLn "Running Test 25: Primorial Manifold Violated"
+  let res25 = quickCheck prop_primorialManifoldViolated
+
+  putStrLn "Running Test 26: Gluon Transaction Preserves Confinement"
+  let res26 = quickCheck prop_gluonTransactionPreservesConfinement
+
+  putStrLn "Running Test 27: Gluon Transaction Structural Stability"
+  let res27 = quickCheck prop_gluonTransactionIsStable
+
+  putStrLn "Running Test 28: S13 Evaluation Matches"
+  let res28 = quickCheck prop_s13EvaluateMatches
+
+  putStrLn "Running Test 29: S13 Evaluation Non-Trivial"
+  let res29 = quickCheck prop_s13NonTrivial
+
   let tableStr = markdownTable [
         ("Label Extraction", "Verifies that UniverseState can be serialized to a non-empty string label for topological graphing.", res1),
         ("Strict Causality", "Ensures that the directed causal graph (Substrate) maintains strictly monotonic time ordering with no cycles.", res2),
@@ -268,7 +303,17 @@ main = do
         ("Radiation Timelessness Proof", "Verifies that a pure Radiation ensemble has exactly zero temporal lag in the Minkowski metric, proving photon timelessness.", res16),
         ("Periodic Table Stability Boundary", "Verifies the exact Feynman stability limit Z <= 137 dynamically across the elements.", res17),
         ("Pauli Exclusion (Unique)", "Verifies that coordinate systems with unique elements strictly satisfy the Pauli Exclusion Principle.", res18),
-        ("Pauli Exclusion (Overlap)", "Verifies that injecting duplicate coordinate assignments correctly triggers a Pauli Exclusion violation.", res19)
+        ("Pauli Exclusion (Overlap)", "Verifies that injecting duplicate coordinate assignments correctly triggers a Pauli Exclusion violation.", res19),
+        ("Meson Color Confinement", "Verifies that any generated Meson dyad is colorless under the ColorConfined interface.", res20),
+        ("Baryon Color Confinement", "Verifies that any generated Baryon triad is colorless under the ColorConfined interface.", res21),
+        ("Pixel Energy Conservation", "Verifies that pixel transitions conserve Blue Quadrance spatial extension.", res22),
+        ("Multiset Energy Conservation", "Verifies that multiset transitions conserve mass-energy degree.", res23),
+        ("Primorial Manifold Conserved", "Verifies that a state pool with exactly 210 states is recognized as physically intact.", res24),
+        ("Primorial Manifold Violated", "Verifies that any state pool with a non-210 size is recognized as physically violated.", res25),
+        ("Gluon Transaction Confinement", "Verifies that executing a gluon transaction (matrix rotation) dynamically preserves color confinement.", res26),
+        ("Gluon Transaction Stability", "Verifies that the gluon transaction is structurally stable and coordinates are preserved.", res27),
+        ("S13 Evaluation Matches", "Verifies that the evaluated S13 resonance matches the S13 polynomial.", res28),
+        ("S13 Evaluation Non-Trivial", "Verifies that the high-order S13 resonance is non-trivial.", res29)
       ]
       
   let codePreamble = unlines [

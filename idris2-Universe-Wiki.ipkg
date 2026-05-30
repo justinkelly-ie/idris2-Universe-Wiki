@@ -23,6 +23,12 @@ modules = Symmetry.Common,
           Maths.LinearBridgeProperties,
           Code.Engine_Verification,
           System.PeriodicTableVerification,
-          Invariant.PauliExclusionVerification
+          Invariant.PauliExclusionVerification,
+          Invariant.ColorConfinementVerification,
+          Invariant.EnergyConservationVerification,
+          Invariant.PrimorialConservationVerification,
+          System.HadronGluonDynamicsVerification,
+          System.Spread13Verification
 
 main = Main
+
