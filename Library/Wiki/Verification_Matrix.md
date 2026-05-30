@@ -21,5 +21,8 @@ This matrix tracks the automated testing suite for the core Cosmology, Chromogeo
 | Carbon Valence Identity | Ensures Carbon's algebraic valence mathematically equals the BondGate degree (4), formalizing why it acts as the universal organic backbone. | ✅ PASS | OK, passed 100 tests . |
 | Iron Structural Lag | Verifies the total structural Leibniz lag of Iron matches its nucleosynthesis peak state of 52 lag units. | ✅ PASS | OK, passed 100 tests . |
 | Feynmanium Structural Lag | Verifies the maximum stable element Feynmanium possesses exactly 274 total lag units at the grid boundary. | ✅ PASS | OK, passed 100 tests . |
+| Hydrogen Minimal Lag | Verifies that Hydrogen's coordinate lag is minimal and non-trivial. | ✅ PASS | OK, passed 100 tests . |
+| Oxygen Valence Acceptance | Verifies that Oxygen accepts exactly 2 electrons. | ✅ PASS | OK, passed 100 tests . |
+| Oxygen Latent Partition | Verifies that Oxygen partitions the dark energy pool into exactly 16 quanta. | ✅ PASS | OK, passed 100 tests . |
 | Ascension Mass Conservation | Verifies that when a state condenses into a single macro-node during topological ascension, its total mass (Leibniz Lag) is perfectly conserved. | ✅ PASS | OK, passed 100 tests . |
 | Empty Vacuum Anchor | Ensures an empty universe cannot spontaneously ascend scales. | ✅ PASS | OK, passed 100 tests . |

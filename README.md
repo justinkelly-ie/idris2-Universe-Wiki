@@ -4,7 +4,7 @@
 
 [![Idris2](https://img.shields.io/badge/Idris2-LUniverse-blue.svg)](https://github.com/idris-lang/Idris2)
 [![Wiki](https://img.shields.io/badge/Wiki-Living_Docs-red.svg)]()
-[![Tests](https://img.shields.io/badge/QuickCheck-67_passing-green.svg)]()
+[![Tests](https://img.shields.io/badge/QuickCheck-70_passing-green.svg)]()
 
 ---
 
@@ -14,7 +14,7 @@ Welcome to the **Natural Universe Wiki**. This repository serves as the definiti
 
 Unlike traditional static wikis, this codebase is **executable**. Every chapter combines deep theoretical physics, chromogeometric mathematical diagrams, and **Literate Idris 2 (`.md`) property-based proofs**. 
 
-When compiled, the wiki executes **67 system-level QuickCheck properties** to structurally verify that the laws of nature — Conservation of Mass, Monotonic Causality, Baryogenesis, and Pythagorean Fixed Points — are strictly enforced by the underlying multiset algebra.
+When compiled, the wiki executes **70 system-level QuickCheck properties** to structurally verify that the laws of nature — Conservation of Mass, Monotonic Causality, Baryogenesis, and Pythagorean Fixed Points — are strictly enforced by the underlying multiset algebra.
 
 ---
 
@@ -47,7 +47,9 @@ graph TD
 
 ## Interactive Wiki Navigation (TOC)
 
-Every directory in the Literate Wiki has a dedicated **`Index.md`** serving as the section portal, detailing the underlying physics, mathematical models, and live compile-time proofs. Click on the headers below to explore eac### [1. Discrete Geometry & Grid Architecture (Simplex)](Library/Wiki/Simplex/Index.md)
+Every directory in the Literate Wiki has a dedicated **`Index.md`** serving as the section portal, detailing the underlying physics, mathematical models, and live compile-time proofs. Click on the headers below to explore each section:
+
+### [1. Discrete Geometry & Grid Architecture (Simplex)](Library/Wiki/Simplex/Index.md)
 *   **[Simplicial Architecture](Library/Wiki/Simplex/Simplicial_Architecture.md)** — Introduction to discrete spatial pixels and directed acyclic substrates.
 *   **[Topological Types & Relations](Library/Wiki/Simplex/Types.md)** — Core type definitions of basis powers, polynomial terms, and coordinate bindings.
 *   **[Monotonic Simplex Properties](Library/Wiki/Simplex/Properties.md)** — Proofs of monotonic coordinate relations and labeled graph extractions.
@@ -101,6 +103,15 @@ Every directory in the Literate Wiki has a dedicated **`Index.md`** serving as t
 
 ### [9. QTT Linear Memory Bridge (Maths)](Library/Wiki/Maths/Index.md)
 *   **[Linear Bridge Properties](Library/Wiki/Maths/LinearBridgeProperties.md)** — Compile-time linear bridge round-trips and physical conservation laws.
+
+### [10. Compound Systems & Chemistry (Compound)](Library/Wiki/Compound/Index.md)
+*   **[Hydrogen Verification](Library/Wiki/Compound/HydrogenVerification.md)** — Minimal coordinate lag and ground-state valence of 1.
+*   **[Oxygen Verification](Library/Wiki/Compound/OxygenVerification.md)** — BackgroundGate valence of 2 and dark energy pool division into 16 quanta.
+*   **[Carbon Verification](Library/Wiki/Compound/CarbonVerification.md)** — Organic backbone and 4-valence bonding stability.
+*   **[Water Verification](Library/Wiki/Compound/WaterVerification.md)** — Polar $H_2O$ bonds verified at the $(4,3)$ Pythagorean Fixed Point.
+*   **[Methane Verification](Library/Wiki/Compound/MethaneVerification.md)** — Balanced tetrahedral $CH_4$ coordinate signatures.
+*   **[Iron Verification](Library/Wiki/Compound/IronVerification.md)** — Peak nucleosynthesis stellar core structures.
+*   **[Feynmanium Verification](Library/Wiki/Compound/FeynmaniumVerification.md)** — Quantum stability boundaries at $Z=137$.
 
 ---
 

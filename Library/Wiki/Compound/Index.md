@@ -11,4 +11,10 @@ In the Primorial Architecture, chemistry is not driven by continuous electromagn
 
 ## Section Contents
 
-*   **[Elements](Elements.md)**: Detail on the molecular structures, algebraic valences, and structural lags of Carbon, Hydrogen, Oxygen, Water, Methane, Iron, and Feynmanium.
+*   **[Hydrogen](HydrogenVerification.md)**: Ground-state element ($Z=1$) with minimal coordinate lag.
+*   **[Oxygen](OxygenVerification.md)**: Universal mediator element ($Z=8$) partitioning dark energy and visible matter.
+*   **[Carbon](CarbonVerification.md)**: Covalent organic backbone element ($Z=6$) matching the matter-bond gate.
+*   **[Water](WaterVerification.md)**: Polar compound molecule ($H_2O$) anchored at the unique $(4,3)$ Pythagorean Fixed Point.
+*   **[Methane](MethaneVerification.md)**: Tetrahedral molecule ($CH_4$) with balanced red-metric null-vector oscillations.
+*   **[Iron](IronVerification.md)**: Peak nucleosynthesis core element ($Z=26$) with a structural lag peak of 52.
+*   **[Feynmanium](FeynmaniumVerification.md)**: Maximum stable boundary element ($Z=137$) with a structural lag boundary of 274.

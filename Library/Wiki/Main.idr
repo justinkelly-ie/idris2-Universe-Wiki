@@ -5,8 +5,14 @@ import Symmetry.Common
 import Derivation.LabelExtraction
 import Derivation.DimensionalCausality
 import Derivation.EpochInjection
+import Compound.CarbonVerification
+import Compound.HydrogenVerification
+import Compound.OxygenVerification
+import Compound.WaterVerification
+import Compound.MethaneVerification
+import Compound.IronVerification
+import Compound.FeynmaniumVerification
 import Scale.CosmologicalScaling
-import Compound.Elements
 import Simplex.Properties
 import Evolution.Evolution
 -- New tests
@@ -201,6 +207,15 @@ main = do
   putStrLn "Running Test 9.2: Feynmanium Structural Lag"
   let resFeynmanium = quickCheck prop_feynmaniumLag
 
+  putStrLn "Running Test 9.3: Hydrogen Minimal Lag"
+  let resHydrogen = quickCheck prop_hydrogenLagMinimal
+
+  putStrLn "Running Test 9.4: Oxygen Valence Acceptance"
+  let resOxygenValence = quickCheck prop_oxygenValenceIs2
+
+  putStrLn "Running Test 9.5: Oxygen Latent Partition"
+  let resOxygenPartition = quickCheck prop_oxygenDividesLatent
+
   putStrLn "Running Test 10: Evolution Mass Conservation on Ascension"
   let res10 = quickCheck prop_ascensionConservesMass
 
@@ -272,6 +287,9 @@ main = do
         ("Carbon Valence Identity", "Ensures Carbon's algebraic valence mathematically equals the BondGate degree (4), formalizing why it acts as the universal organic backbone.", res9),
         ("Iron Structural Lag", "Verifies the total structural Leibniz lag of Iron matches its nucleosynthesis peak state of 52 lag units.", resIron),
         ("Feynmanium Structural Lag", "Verifies the maximum stable element Feynmanium possesses exactly 274 total lag units at the grid boundary.", resFeynmanium),
+        ("Hydrogen Minimal Lag", "Verifies that Hydrogen's coordinate lag is minimal and non-trivial.", resHydrogen),
+        ("Oxygen Valence Acceptance", "Verifies that Oxygen accepts exactly 2 electrons.", resOxygenValence),
+        ("Oxygen Latent Partition", "Verifies that Oxygen partitions the dark energy pool into exactly 16 quanta.", resOxygenPartition),
         ("Ascension Mass Conservation", "Verifies that when a state condenses into a single macro-node during topological ascension, its total mass (Leibniz Lag) is perfectly conserved.", res10),
         ("Empty Vacuum Anchor", "Ensures an empty universe cannot spontaneously ascend scales.", res11)
       ]
