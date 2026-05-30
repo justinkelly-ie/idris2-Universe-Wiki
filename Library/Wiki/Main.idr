@@ -6,6 +6,7 @@ import Derivation.LabelExtraction
 import Derivation.DimensionalCausality
 import Derivation.EpochInjection
 import Derivation.GravitationalTimeDilationVerification
+import Derivation.VacuumPairProductionVerification
 import Compound.CarbonVerification
 import Compound.HydrogenVerification
 import Compound.OxygenVerification
@@ -223,6 +224,12 @@ main = do
   putStrLn "Running Test 9.7: Black Hole Time Dilation Redshift Asymptote"
   let resTimeDilationAsymptote = quickCheck prop_lagWarpAsymptote
 
+  putStrLn "Running Test 9.8: Vacuum Pair Spontaneous Charge Conservation"
+  let resPairChargeNeutral = quickCheck prop_pairProductionNetCharge
+
+  putStrLn "Running Test 9.9: Perfect Vacuum Pair Annihilation"
+  let resPairAnnihilation = quickCheck prop_pairAnnihilationRestoresVacuum
+
   putStrLn "Running Test 10: Evolution Mass Conservation on Ascension"
   let res10 = quickCheck prop_ascensionConservesMass
 
@@ -299,6 +306,8 @@ main = do
         ("Oxygen Latent Partition", "Verifies that Oxygen partitions the dark energy pool into exactly 16 quanta.", resOxygenPartition),
         ("Monotonic Time Dilation", "Verifies that local time dilation multipliers strictly increase as local multiset lag density increases.", resTimeDilationMonotonic),
         ("Black Hole Redshift Asymptote", "Proves that at the ultimate black hole threshold (Z = 137), the local gravitational redshift scales precisely to 347/210.", resTimeDilationAsymptote),
+        ("Vacuum Pair Charge Conservation", "Verifies that spontaneous Schwinger pair creation preserves the net charge of the universe exactly.", resPairChargeNeutral),
+        ("Vacuum Pair Annihilation", "Verifies that virtual particle and antiparticle polynumbers perfectly annihilate to zero amplitude.", resPairAnnihilation),
         ("Ascension Mass Conservation", "Verifies that when a state condenses into a single macro-node during topological ascension, its total mass (Leibniz Lag) is perfectly conserved.", res10),
         ("Empty Vacuum Anchor", "Ensures an empty universe cannot spontaneously ascend scales.", res11)
       ]

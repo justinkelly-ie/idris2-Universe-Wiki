@@ -8,6 +8,7 @@ This section documents how continuous physical phenomena—such as causality, qu
 *   **Double-Slit Interference**: Explaining bright and dark fringes as integer spreads projecting stable whole-number coordinates versus fractional spreads dispersing into the background substrate.
 *   **Epoch Injection**: Proving the Baryogenesis phase transition by starting the simulation exactly at the Phase 2 baryogenesis threshold.
 *   **Gravitational Time Dilation**: Emergent clock warping caused by localized multiset complexity (Leibniz Lag) consuming background cycles.
+*   **Vacuum Pair Production**: Explaining spontaneous Schwinger virtual particle-antiparticle generation as zero-net-charge amplitude unrollings in the vacuum.
 
 ## Section Contents
 
@@ -18,3 +19,4 @@ This section documents how continuous physical phenomena—such as causality, qu
 *   **[Label Extraction](LabelExtraction.md)**: Serialization of `UniverseState` into JSON labels for topological graphing.
 *   **[Theorems](Theorems.md)**: Mathematical theorems of discrete physical laws.
 *   **[UniverseState](UniverseState.md)**: Core functional data structure of the causal substrate and quantum state vector.
+*   **[Vacuum Pair Production](VacuumPairProductionVerification.md)**: Proofs of spontaneous charge neutrality conservation and perfect coordinate annihilation.
