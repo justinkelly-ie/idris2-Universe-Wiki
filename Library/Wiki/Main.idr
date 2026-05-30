@@ -206,8 +206,8 @@ main = do
   putStrLn "Running Test 13: SparseMaxel Superposition Lag Preservation"
   let res13 = quickCheck prop_superposeLag
 
-  putStrLn "Running Test 14: Empty Vacuum Synchronisation"
-  let res14 = quickCheck prop_emptyVacuumSynchronised
+  putStrLn "Running Test 14: Evolved Universe Synchronisation"
+  let res14 = quickCheck prop_evolvedUniverseSynchronised
 
   putStrLn "Running Test 15: QTT SigmaBridge Round-Trip"
   let res15 = quickCheck prop_sigmaBridgeRoundTrip
@@ -252,7 +252,7 @@ main = do
   let codeTableStr = markdownTable [
         ("Substrate Merge Lag Aggregation", "Verifies that merging two causal substrates strictly aggregates their Leibniz lag (causal density).", res12),
         ("SparseMaxel Superposition Lag Preservation", "Verifies that superposing two SparseMaxels perfectly preserves the total state lag (Quantum Probability / Mass).", res13),
-        ("Empty Vacuum Synchronisation", "Verifies that an empty Substrate and an empty SparseMaxel are always topologically synchronised.", res14),
+        ("Evolved Universe Synchronisation", "Verifies that every active, evolved UniverseState remains perfectly topologically synchronised across all epochs.", res14),
         ("QTT SigmaBridge Round-Trip", "Verifies that melting a state vector into a linear dependent multiset and freezing it back preserves the exact physical identity.", res15),
         ("Radiation Timelessness Proof", "Verifies that a pure Radiation ensemble has exactly zero temporal lag in the Minkowski metric, proving photon timelessness.", res16)
       ]
